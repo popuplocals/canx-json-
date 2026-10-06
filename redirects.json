@@ -1,0 +1,119 @@
+[
+  {
+    "source": "/",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "2521"
+      }
+    ],
+    "destination": "/immigration-blogs/",
+    "permanent": true
+  },
+  {
+    "source": "/blog/",
+    "destination": "/immigration-blogs/",
+    "permanent": true
+  },
+  {
+    "source": "/blogs/",
+    "destination": "/immigration-blogs/",
+    "permanent": true
+  },
+  {
+    "source": "/about/",
+    "destination": "/our-story/",
+    "permanent": true
+  },
+  {
+    "source": "/contact/",
+    "destination": "/contact-us/",
+    "permanent": true
+  },
+  {
+    "source": "/services/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/immigration/",
+    "destination": "/immigration-consultation-canada/",
+    "permanent": true
+  },
+  {
+    "source": "/recruitment/",
+    "destination": "/employers/",
+    "permanent": true
+  },
+  {
+    "source": "/spousal-sponsorship-document-checklist-canada-2026-2/",
+    "destination": "/spousal-sponsorship-canada-documents-checklist-2026/",
+    "permanent": true
+  },
+  {
+    "source": "/how-to-get-50-crs-points-in-express-entry-with-a-certificate/",
+    "destination": "/how-to-get-50-crs-points-in-express-entry-with-a-certificate-of-qualification/",
+    "permanent": true
+  },
+  {
+    "source": "/how-to-get-50-points-in-express-entry-with-a-certificate-of-qualification/",
+    "destination": "/how-to-get-50-crs-points-in-express-entry-with-a-certificate-of-qualification/",
+    "permanent": true
+  },
+  {
+    "source": "/how-to-get-50-points-in-express-entry-with-a-qualification-certificate/",
+    "destination": "/how-to-get-50-crs-points-in-express-entry-with-a-certificate-of-qualification/",
+    "permanent": true
+  },
+  {
+    "source": "/how-to-get-50-CRS-points-in-express-entry-with-a-certificate/",
+    "destination": "/how-to-get-50-crs-points-in-express-entry-with-a-certificate-of-qualification/",
+    "permanent": true
+  },
+  {
+    "source": "/how-to-get-50-CRS-Points-in-Express-Entry-With-a-Certificate-of-Qualification/",
+    "destination": "/how-to-get-50-crs-points-in-express-entry-with-a-certificate-of-qualification/",
+    "permanent": true
+  },
+  {
+    "source": "/express-entry-points-2026/",
+    "destination": "/what-is-the-point-system-for-canadian-immigration-and-do-you-qualify/",
+    "permanent": true
+  },
+  {
+    "source": "/can-i-stay-in-canada-after-my-visa-expires/",
+    "destination": "/how-long-can-you-actually-stay-in-canada-after-your-visa-expires/",
+    "permanent": true
+  },
+  {
+    "source": "/can-seniors-move-to-family-to-be-with-family/",
+    "destination": "/can-seniors-move-to-canada-to-be-with-family-the-honest-answer/",
+    "permanent": true
+  },
+  {
+    "source": "/how-can-i-know-if-my-canadian-positive-lmia-is-original-or-fake-if-its-a-fake-then-what-should-i-do/",
+    "destination": "/how-to-check-if-your-lmia-is-genuine-and-approved-by-service-canada/",
+    "permanent": true
+  },
+  {
+    "source": "/how-long-canada-pr-actually-take-real-timelines-not-estimates/",
+    "destination": "/how-long-does-canada-pr-actually-take-real-timelines-not-estimates/",
+    "permanent": true
+  },
+  {
+    "source": "/pnp-canada-2006-provincial-nominee-program/",
+    "destination": "/pnp-canada-2026-provincial-nominee-program/",
+    "permanent": true
+  },
+  {
+    "source": "/spousal-specship-criminal-record-canada-2026/",
+    "destination": "/spousal-sponsorship-criminal-record-canada-2026/",
+    "permanent": true
+  },
+  {
+    "source": "/how-long-should-hiring-actually-take-the-time-to-hire-benchmarks-every-canadian-employer-needs/:page(\\d+)/",
+    "destination": "/how-long-should-hiring-actually-take-the-time-to-hire-benchmarks-every-canadian-employer-needs/",
+    "permanent": true
+  }
+]
