@@ -2,7 +2,7 @@ import Link from "next/link";
 import { CATEGORIES, formatDate, getMostRead, getRelated, type Post } from "@/lib/content";
 import "../../styles/post.css";
 
-const AVATAR = "https://canxglobal.com/wp-content/uploads/2026/05/anuj-avatar-400.png";
+const AVATAR = "/wp-content/uploads/2026/05/anuj-avatar-400.png";
 
 const Icon = {
   fb: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>,
