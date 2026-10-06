@@ -1,0 +1,164 @@
+
+    /* --- SECTION WRAPPER --- */
+    #canx-checklist-section {
+        /* --- BLUE VARIABLES --- */
+        --blue-light: #39BBF9;
+        --blue-dark: #1967B0;
+        --brand-gradient: linear-gradient(135deg, #39BBF9 0%, #1967B0 100%);
+        
+        --text-black: #1a1a1a;
+        --text-gray: #555555;
+        
+        /* Background Colors */
+        --section-bg: transparent; /* TRANSPARENT BACKGROUND */
+        --card-bg: #ffffff;
+        
+        /* Icon Specifics */
+        --icon-bg-light: #e0f4fe; /* Very faint blue for icon background */
+        
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--section-bg);
+        padding: 80px 20px;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+    }
+
+    #canx-checklist-section * {
+        box-sizing: border-box;
+    }
+
+    #canx-checklist-section .container {
+        max-width: 1050px;
+        margin: 0 auto;
+    }
+
+    /* --- HEADINGS --- */
+    #canx-checklist-section h2.section-title {
+        color: var(--text-black);
+        font-size: 2.6rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    /* Highlight Text (Dark Blue) */
+    #canx-checklist-section .highlight-text {
+        color: var(--blue-dark);
+        display: inline-block;
+        font-weight: 700;
+    }
+
+    #canx-checklist-section p.section-subtitle {
+        color: var(--text-gray);
+        font-size: 1.15rem;
+        margin-bottom: 50px;
+        text-align: center;
+        font-weight: 400;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+    }
+
+    /* --- CHECKLIST GRID --- */
+    #canx-checklist-section .checklist-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+        gap: 30px; 
+    }
+
+    /* --- LIST ITEM CARD --- */
+    #canx-checklist-section .check-item {
+        display: flex;
+        align-items: center;
+        background: var(--card-bg);
+        border: 1px solid #eeeeee;
+        padding: 30px;
+        border-radius: 16px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        height: 100%;
+    }
+
+    #canx-checklist-section .check-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(25, 103, 176, 0.1); /* Blueish Shadow */
+        border-color: #bce6fd; /* Subtle blue border on hover */
+    }
+
+    /* --- ICON BOX (Light Blue with Dark Blue Icon) --- */
+    #canx-checklist-section .icon-box {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        
+        /* Light Blue Background */
+        background-color: var(--icon-bg-light); 
+        
+        /* Dark Blue Icon Color */
+        color: var(--blue-dark); 
+        
+        border-radius: 12px; /* Soft square */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+    
+    /* SVG Sizing */
+    #canx-checklist-section .icon-box svg {
+        width: 22px;
+        height: 22px;
+        fill: currentColor;
+    }
+
+    /* Hover Effect: Turns to Blue Gradient */
+    #canx-checklist-section .check-item:hover .icon-box {
+        background: var(--brand-gradient);
+        color: #ffffff;
+        box-shadow: 0 5px 15px rgba(57, 187, 249, 0.3);
+    }
+
+    #canx-checklist-section .item-text {
+        font-size: 1.05rem;
+        color: var(--text-black);
+        line-height: 1.6;
+        font-weight: 500;
+        margin: 0;
+        padding-top: 2px;
+    }
+
+    /* --- RESPONSIVE MEDIA QUERIES --- */
+    
+    @media (max-width: 1024px) {
+        #canx-checklist-section .checklist-grid {
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #canx-checklist-section {
+            padding: 50px 20px;
+        }
+        
+        #canx-checklist-section .checklist-grid {
+            grid-template-columns: 1fr; /* 1 Column on Mobile */
+            gap: 15px;
+        }
+        
+        #canx-checklist-section h2.section-title {
+            font-size: 2rem;
+        }
+        
+        #canx-checklist-section p.section-subtitle {
+            font-size: 1rem;
+            margin-bottom: 35px;
+        }
+        
+        #canx-checklist-section .check-item {
+            padding: 25px;
+        }
+    }

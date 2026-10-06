@@ -1,0 +1,281 @@
+{
+ "path": "/mission-purpose/",
+ "url": "https://canxglobal.com/mission-purpose/",
+ "wp_id": 2973,
+ "title_wp": "Mission & Purpose",
+ "seo_title": "Our Mission & Purpose | Helping You Succeed | Can X Global",
+ "meta_description": "Learn about Can X Global mission to simplify immigration and recruitment. We’re dedicated to your success.",
+ "h1": "Mission & Purpose || Mission || Purpose",
+ "schema_types": "BreadcrumbList, Organization, LegalService/LocalBusiness",
+ "og_title": "Our Mission & Purpose | Helping You Succeed | Can X Global",
+ "body_class": "wp-singular page-template-default page page-id-2973 wp-custom-logo wp-embed-responsive wp-theme-astra wp-child-theme-canxglobal-child manage-default jkit-color-scheme ast-desktop ast-page-builder-template ast-no-sidebar astra-4.14.0 group-blog ast-single-post ast-inherit-site-logo-transparent ast-hfb-header ast-sticky-main-shrink ast-sticky-header-shrink ast-inherit-site-logo-sticky ast-primary-sticky-enabled elementor-default elementor-kit-8 elementor-page elementor-page-2973 astra-addon-4.12.2",
+ "stylesheets": [
+  "/wp-content/cache/fonts/1/google-fonts/css/b/5/b/e554d052b6bbb844dea5174102a71.css",
+  "/wp-content/themes/astra/assets/css/minified/main.min.css",
+  "/wp-content/cache/min/1/wp-content/uploads/astra/astra-theme-dynamic-css-post-2973.css",
+  "/wp-content/cache/min/1/wp-content/plugins/jeg-elementor-kit/assets/css/elements/main.css",
+  "/wp-includes/css/dist/theme/design-tokens.min.css",
+  "/wp-includes/css/dist/components/style.min.css",
+  "/wp-content/cache/min/1/wp-content/mu-plugins/vendor/wpex/godaddy-launch/includes/Dependencies/GoDaddy/Styles/build/latest.css",
+  "/wp-content/plugins/elementor/assets/css/frontend.min.css",
+  "/wp-content/plugins/elementor/assets/css/widget-heading.min.css",
+  "/wp-content/plugins/elementor/assets/css/widget-image.min.css",
+  "/wp-content/cache/min/1/wp-content/uploads/elementor/css/base-desktop.css",
+  "/wp-content/uploads/elementor/css/base-mobile.css",
+  "/wp-content/cache/min/1/releases/v7.0.1/css/fontawesome.css",
+  "/wp-content/cache/background-css/1/canxglobal.com/wp-content/cache/min/1/wp-content/themes/canxglobal-child/css/owlcarousel.css",
+  "/wp-content/cache/min/1/wp-content/themes/canxglobal-child/css/owlthemedefault.css",
+  "/wp-content/cache/min/1/wp-content/uploads/astra-addon/astra-addon-69f3198fe12b67-24897670.css",
+  "/wp-content/cache/min/1/wp-content/uploads/astra-addon/astra-addon-dynamic-css-post-2973.css",
+  "/wp-content/plugins/elementor-pro/assets/css/widget-nav-menu.min.css",
+  "/wp-content/cache/background-css/1/canxglobal.com/wp-content/cache/min/1/wp-content/themes/canxglobal-child/style.css",
+  "/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css",
+  "/wp-content/plugins/elementor/assets/css/conditionals/apple-webkit.min.css",
+  "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/css/common.css",
+  "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/css/mail-chimp.css",
+  "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/css/heading.css",
+  "/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css",
+  "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/css/button.css",
+  "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/css/icon-box.css",
+  "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/css/nav-menu.css",
+  "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/css/header-search.css",
+  "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/css/header-offcanvas.css",
+  "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/css/header-info.css",
+  "/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/poppins.css",
+  "/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/roboto.css",
+  "/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/worksans.css",
+  "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/modules/elementskit-icon-pack/assets/css/ekiticons.css",
+  "/wp-content/cache/min/1/wp-content/plugins/jeg-elementor-kit/assets/fonts/jkiticon/jkiticon.css",
+  "/wp-content/cache/min/1/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css",
+  "/wp-content/plugins/jeg-elementor-kit/lib/jeg-framework/assets/css/jeg-dynamic-styles.css",
+  "/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css",
+  "/wp-content/plugins/elementor/assets/css/widget-rating.min.css",
+  "/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css",
+  "/wp-content/plugins/elementor/assets/css/conditionals/e-swiper.min.css",
+  "/wp-content/plugins/elementor-pro/assets/css/widget-testimonial-carousel.min.css",
+  "/wp-content/plugins/elementor-pro/assets/css/widget-carousel-module-base.min.css",
+  "/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/inter.css"
+ ],
+ "styles": [
+  "e30bfec6f6c5995b.css",
+  "32d8f52da5ed2de1.css",
+  "57fcc2a7b8da78b9.css",
+  "7b5e77988ef3ee24.css",
+  "47704d25edb22346.css",
+  "709e10b886876a3b.css",
+  "f65192c949f757af.css",
+  "e402804e62b4918a.css",
+  "e95ce902977c734b.css",
+  "6bcf6c7fb2af05a7.css",
+  "f8bd203188ffe077.css",
+  "46246130ead090f0.css",
+  "83cbde47ada7da17.css",
+  "af19454c5f144ab0.css",
+  "f287846a5d606ddf.css",
+  "ce0bc7ebc2af57a4.css",
+  "2668aa81d8aecc7e.css",
+  "500c07d0ab941f8f.css",
+  "1dca94eac0b01eaa.css",
+  "16fd8207edd2735f.css",
+  "df93d491d88c0c5d.css",
+  "9ba1964568aea852.css",
+  "ac2861d0efd0db6a.css",
+  "cb89814b73c2d44b.css"
+ ],
+ "scripts": [
+  {
+   "inline": "1e74c490ed76f671.js",
+   "id": null
+  },
+  {
+   "inline": "e918205cc74960fe.js",
+   "id": null
+  },
+  {
+   "inline": "e2bd198cc9c543de.js",
+   "id": null
+  },
+  {
+   "src": "/wp-includes/js/jquery/jquery.min.js"
+  },
+  {
+   "src": "/wp-includes/js/jquery/jquery-migrate.min.js"
+  },
+  {
+   "src": "/wp-content/cache/min/1/wp-content/themes/canxglobal-child/js/owlcarousel.js"
+  },
+  {
+   "src": "/wp-content/cache/min/1/wp-content/themes/canxglobal-child/js/custom.js"
+  },
+  {
+   "inline": "31be78368db62102.js",
+   "id": null
+  },
+  {
+   "inline": "2c71d08402dfc5f9.js",
+   "id": null
+  },
+  {
+   "inline": "a6ccfd8f2ee760bd.js",
+   "id": "astra-theme-js-js-extra"
+  },
+  {
+   "src": "/wp-content/themes/astra/assets/js/minified/frontend.min.js"
+  },
+  {
+   "src": "/wp-includes/js/dist/dom-ready.min.js"
+  },
+  {
+   "inline": "057f44f9b7f18216.js",
+   "id": "starter-templates-zip-preview-js-extra"
+  },
+  {
+   "src": "/wp-content/cache/min/1/wp-content/plugins/astra-sites/inc/lib/onboarding/assets/dist/template-preview/main.js"
+  },
+  {
+   "inline": "d5387e85030e0d47.js",
+   "id": "rocket_lazyload_css-js-extra"
+  },
+  {
+   "src": "/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js"
+  },
+  {
+   "src": "/wp-content/plugins/elementor/assets/js/frontend-modules.min.js"
+  },
+  {
+   "inline": "465222a2a08699bf.js",
+   "id": "jquery-ui-core-js-before"
+  },
+  {
+   "src": "/wp-includes/js/jquery/ui/core.min.js"
+  },
+  {
+   "inline": "d098e1a50d3bc0c2.js",
+   "id": "elementor-frontend-js-before"
+  },
+  {
+   "src": "/wp-content/plugins/elementor/assets/js/frontend.min.js"
+  },
+  {
+   "inline": "2d34f32a02905285.js",
+   "id": "elementor-frontend-js-after"
+  },
+  {
+   "src": "/wp-content/cache/min/1/wp-content/themes/canxglobal-child/js/custom.js"
+  },
+  {
+   "inline": "1b6527a08515be97.js",
+   "id": "astra-addon-js-js-extra"
+  },
+  {
+   "src": "/wp-content/cache/min/1/wp-content/uploads/astra-addon/astra-addon-69f3198fe52bf5-63796377.js"
+  },
+  {
+   "src": "/wp-content/plugins/astra-addon/assets/js/minified/purify.min.js"
+  },
+  {
+   "src": "/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js"
+  },
+  {
+   "src": "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/js/mail-chimp.js"
+  },
+  {
+   "inline": "225a0222e407483d.js",
+   "id": "googlesitekit-events-provider-content-events-js-before"
+  },
+  {
+   "src": "/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-content-events-6b04077d00f0d606ba42.js"
+  },
+  {
+   "src": "/wp-content/cache/min/1/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js"
+  },
+  {
+   "src": "/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-mailchimp-ae89b2302ee1e23a78ac.js"
+  },
+  {
+   "src": "/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-wpforms-fdbd42f50702ca1e0c36.js"
+  },
+  {
+   "inline": "a5cdcd9053d32551.js",
+   "id": "ekit-core-js-extra"
+  },
+  {
+   "src": "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/js/widgets/core.js"
+  },
+  {
+   "src": "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/js/widgets/nav-menu.js"
+  },
+  {
+   "src": "/wp-content/plugins/elementskit-lite/assets/libs/magnific-popup/jquery.magnific-popup.min.js"
+  },
+  {
+   "src": "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/js/nav-menu.js"
+  },
+  {
+   "src": "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/js/widgets/header-search.js"
+  },
+  {
+   "src": "/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/js/widgets/header-offcanvas.js"
+  },
+  {
+   "src": "/wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min.js"
+  },
+  {
+   "src": "/wp-includes/js/dist/hooks.min.js"
+  },
+  {
+   "src": "/wp-includes/js/dist/i18n.min.js"
+  },
+  {
+   "inline": "01dc809f7ce3de4e.js",
+   "id": "wp-i18n-js-after"
+  },
+  {
+   "inline": "86ef5942b9af5f5a.js",
+   "id": "elementor-pro-frontend-js-before"
+  },
+  {
+   "src": "/wp-content/plugins/elementor-pro/assets/js/frontend.min.js"
+  },
+  {
+   "src": "/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js"
+  },
+  {
+   "src": "/wp-includes/js/underscore.min.js"
+  },
+  {
+   "inline": "fb5bffb0a196b130.js",
+   "id": "wp-util-js-extra"
+  },
+  {
+   "src": "/wp-includes/js/wp-util.min.js"
+  },
+  {
+   "inline": "62792a95079c0f20.js",
+   "id": "wpforms-elementor-js-extra"
+  },
+  {
+   "src": "/wp-content/plugins/wpforms/assets/js/integrations/elementor/frontend.min.js"
+  },
+  {
+   "inline": "2b7eeefaa1edf3a7.js",
+   "id": null
+  },
+  {
+   "inline": "2654a4e041ac11d5.js",
+   "id": null
+  },
+  {
+   "inline": "0865571280ff437d.js",
+   "id": null
+  },
+  {
+   "src": "/wp-content/cache/min/1/traffic-assets/js/tccl-tti.min.js"
+  },
+  {
+   "inline": "41ea2aab6d7b351c.js",
+   "id": null
+  }
+ ],
+ "body_chars": 239189
+}

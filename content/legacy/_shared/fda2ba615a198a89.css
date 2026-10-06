@@ -1,0 +1,5 @@
+
+  iframe[src*="canxglobal"] + div,
+  iframe[src*="canxglobal"] ~ a[href*="emergent"] {
+    display: none !important;
+  }

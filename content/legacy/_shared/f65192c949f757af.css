@@ -1,0 +1,60 @@
+.pcm .chip, .nl-b .chip, .ep-b .chip, .tr-meta .chip {
+  color: #fff !important;
+  vertical-align: middle;
+}
+.pcm .chip.ce, .nl-b .chip.ce, .ep-b .chip.ce, .tr-meta .chip.ce { background: rgb(29, 78, 216); }
+.pcm .chip.cf, .nl-b .chip.cf, .ep-b .chip.cf, .tr-meta .chip.cf { background: rgb(185, 28, 28); }
+.pcm .chip.cl, .nl-b .chip.cl, .ep-b .chip.cl, .tr-meta .chip.cl { background: rgb(109, 40, 217); }
+.pcm .chip.cw, .nl-b .chip.cw, .ep-b .chip.cw, .tr-meta .chip.cw { background: rgb(22, 101, 52); }
+.pcm .chip.cs, .nl-b .chip.cs, .ep-b .chip.cs, .tr-meta .chip.cs { background: rgb(194, 65, 12); }
+.pcm .chip.cp, .nl-b .chip.cp, .ep-b .chip.cp, .tr-meta .chip.cp { background: rgb(30, 64, 175); }
+.pcm .chip.cst, .nl-b .chip.cst, .ep-b .chip.cst, .tr-meta .chip.cst { background: rgb(3, 105, 161); }
+.pcm .chip.cc, .nl-b .chip.cc, .ep-b .chip.cc, .tr-meta .chip.cc { background: rgb(55, 48, 163); }
+.pcm .chip.cr, .nl-b .chip.cr, .ep-b .chip.cr, .tr-meta .chip.cr { background: rgb(153, 27, 27); }
+.pcm .chip.ca, .nl-b .chip.ca, .ep-b .chip.ca, .tr-meta .chip.ca { background: rgb(91, 33, 182); }
+.pcm .chip.cn, .nl-b .chip.cn, .ep-b .chip.cn, .tr-meta .chip.cn { background: rgb(127, 29, 29); }
+
+/* Push chip+Read to bottom of every card so all rows align */
+.pc {
+  display: flex !important;
+  flex-direction: column;
+}
+.pcb {
+  display: flex !important;
+  flex-direction: column;
+  flex: 1;
+}
+.pcm {
+  align-items: center;
+  margin-top: auto !important;
+}
+
+/* Fix e-mosaic grid: first pane spans both rows (big left), next two stack on right */
+.e-mosaic .e-pane:first-child {
+  grid-row: 1 / span 2;
+}
+
+/* Smaller text for right-column mosaic cards */
+.e-mosaic .e-pane:not(:first-child) .e-body {
+  padding: 14px 18px !important;
+}
+.e-mosaic .e-pane:not(:first-child) .e-body h2 {
+  font-size: 14px !important;
+  line-height: 1.3 !important;
+  margin-top: 6px !important;
+}
+.e-mosaic .e-pane:not(:first-child) .e-body .chip {
+  font-size: 11px !important;
+  padding: 2px 8px !important;
+}
+
+/* Dark gradient overlay on e-body so white text is readable on any image */
+.e-mosaic .e-body {
+  background: linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.50) 50%, transparent 100%) !important;
+}
+.e-mosaic .e-body h2 {
+  color: #fff !important;
+}
+.e-mosaic .e-pane:not(:first-child) .e-body h2 {
+  color: #fff !important;
+}

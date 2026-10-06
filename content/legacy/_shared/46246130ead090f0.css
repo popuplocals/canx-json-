@@ -1,0 +1,208 @@
+
+.global-mobility-m .e-con-inner { background: #fffaf4; padding: 45px; border-radius: 25px;}
+.featured-blog-m .elementor-widget-container {
+    padding: 15px;
+    background: #F5F2EB;
+}
+ a{text-decoration:none !important;}
+
+.global-mobility-me .e-con-inner { background: #def0ff; padding: 45px; border-radius: 25px;}
+.bg-color-1 .e-con-inner{background: #def0ff;  border-radius: 25px;}
+.bg-color-2 .e-con-inner{background: #fffaf4;  border-radius: 25px;}
+.employee-home ul { columns: 3; list-style: none; column-count: 3;}
+a#quick-apply-btn { display: none;}
+.job-features { display: none;}
+footer .wp-block-image.size-full img {
+    border-radius: 15px;
+	width:75%
+}
+footer #block-43 figure.wp-block-image.size-full img{
+    width: 100% !important;
+}
+.site-footer, .ast-footer-bar, .ast-footer-copyright {
+  display: none !important;
+  visibility: hidden;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+}
+.full_btn a {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center;
+    max-width: 292px !important;
+    margin: 0px auto;
+}
+.help_text .elementor-widget-container {
+    background-color: transparent;
+    font-weight: 500;
+    color: var(--blue);
+    border:1px solid var(--blue) !important;
+    background-image: linear-gradient(90deg, var(--white) 0%, var(--white) 100%);
+    border-radius: 8px 8px 8px 8px;
+    padding: 15px 24px 15px 24px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.new_red .gredent_btn a span {
+    background: linear-gradient(180deg, #E63536 0%, #C50708 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    transition: all 0.4s;
+}
+.new_red .gredent_btn a:hover span{
+    background: linear-gradient(180deg, #fff 0%, #fff 100%) !important;
+     -webkit-background-clip: text !important;
+}
+.heading_btn .elementor-widget-heading:hover div {
+    background-color: #E63536 !important;
+}
+
+.heading_btn .elementor-widget-heading:hover div * {
+    color: var(--white) !important;
+}
+
+
+ul.category_list li {
+    border-color: #39bbf9;
+    color: #39bbf9;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-wrapper {
+    min-width: 700px; /* jitni width chahiye utni set kare */
+    border-collapse: collapse;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+
+/
+/*news sub*/
+.subscribe-btn {
+    color: white !important;
+background: linear-gradient(170deg, #39BBF9 0%, #1967B0 100%);
+}
+
+.subscribe-btn:hover {
+    background-color: white !important;
+    color: #252422 !important;
+}
+
+
+
+
+
+/*chatbot css */
+#canx-wrap button { 
+padding:5px !important;
+}
+#canx-wrap button:hover {
+    color: #0768b5 !important;
+}
+
+#canx-wrap button:active {
+    color: #0768b5 !important;
+}
+
+
+
+/* Last paragraph padding */
+.canx-bub p:last-child {
+    padding: 9px !important;
+}
+
+/* SVG color fix (missing colon fixed) */
+svg:not(:root) {
+    color: #0768b5 !important;
+}
+
+/* WhatsApp text styling */
+.canx-wa span {
+    font-size: xx-small;
+    padding: 6px !important;
+}
+
+
+/*js error*/
+div#wpforms-error-noscript {
+    display: none;
+}
+
+
+
+/*feactures tab css */
+ul.category_list li:nth-child(2).active {
+    background: linear-gradient(90deg, #39BBF9 0%, var(--darkblue) 100%);
+}
+
+/* Force the chat iframe to be completely transparent and remove all spacing */
+#canx-chat-iframe {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    /* Astra-specific overrides */
+    display: block !important;
+    max-width: none !important;
+    max-height: none !important;
+}
+
+
+.canx-row.bot .canx-bub {
+    padding: 10px !important;
+}
+
+.canx-btn.canx-btn-wa {
+    padding: 6px !important;
+    margin: 5px !important;
+}
+a.canx-btn.canx-btn-call {
+    padding: 5px !important;
+}
+a.canx-btn.canx-btn-book {
+    padding: 5px !important;
+}
+
+
+
+
+
+/* ===== CANX Header Scroll Effect ===== */
+header.elementor-location-header {
+  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+  z-index: 9999 !important;
+}
+header.elementor-location-header.cxg-scrolled {
+  background: rgba(237, 232, 223, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
+}
+/* ===== END CANX Header ===== */
+
+
+
+a.cta-btn:hover {
+  color: #ffffff; /* text white hi rahe */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(57, 187, 249, 0.35);
+}
+
+header a:hover {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}

@@ -1,0 +1,285 @@
+
+    /* --- WRAPPER (Scoped to protect your site) --- */
+    #canx-premium-embed {
+        /* --- BLUE BRANDING --- */
+        --blue-light: #39BBF9;
+        --blue-dark: #1967B0;
+        --brand-gradient: linear-gradient(135deg, #39BBF9 0%, #1967B0 100%);
+        
+        --text-black: #1a1a1a;
+        --text-gray: #666666;
+        --card-bg: #ffffff;
+        
+        /* UPDATED BACKGROUND COLOR */
+        --bg-section: #EEF7FF; 
+        
+        /* Typography */
+        font-family: 'Poppins', sans-serif;
+        
+        /* Layout */
+        background-color: var(--bg-section);
+        margin: 0;
+        padding: 60px 20px;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+    }
+
+    #canx-premium-embed * {
+        box-sizing: border-box;
+    }
+
+    #canx-premium-embed .container {
+        max-width: 1150px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* --- HEADINGS --- */
+    #canx-premium-embed h1.page-title {
+        color: var(--text-black);
+        font-size: 2.6rem;
+        margin-bottom: 0.8rem;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+    }
+
+    /* Gradient Text Style (Blue) */
+    #canx-premium-embed .gradient-text {
+        background: var(--brand-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: var(--blue-dark);
+        display: inline-block;
+    }
+
+    #canx-premium-embed p.page-subtitle {
+        color: var(--text-gray);
+        font-size: 1.15rem;
+        margin-bottom: 4rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    /* --- GRID --- */
+    #canx-premium-embed .pricing-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        padding-top: 25px; /* Space for badges */
+    }
+
+    /* --- CARD DESIGN --- */
+    #canx-premium-embed .pricing-card {
+        background: var(--card-bg);
+        border-radius: 20px;
+        width: 100%;
+        max-width: 480px;
+        /* Standard Shadow */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #eeeeee;
+        position: relative;
+    }
+
+    #canx-premium-embed .pricing-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Highlight Card (Blue Border) */
+    #canx-premium-embed .pricing-card.highlight {
+        border: 2px solid var(--blue-light);
+    }
+
+    /* --- BADGES --- */
+    #canx-premium-embed .badge-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        transform: translateY(-50%);
+        z-index: 5;
+    }
+
+    #canx-premium-embed .badge-pill {
+        background: var(--brand-gradient);
+        color: white;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 10px 24px;
+        border-radius: 50px;
+        letter-spacing: 1.2px;
+        /* Blue Shadow */
+        box-shadow: 0 6px 15px rgba(25, 103, 176, 0.25);
+    }
+
+    /* --- CARD HEADER --- */
+    #canx-premium-embed .card-header {
+        padding: 50px 30px 25px 30px;
+        text-align: center;
+        border-bottom: 1px solid #f5f5f5;
+        background: linear-gradient(to bottom, #ffffff, #fafafa);
+        border-radius: 20px 20px 0 0;
+    }
+
+    #canx-premium-embed .consultation-label {
+        display: block;
+        font-size: 0.8rem;
+        color: #888888;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    #canx-premium-embed .special-name {
+        display: block;
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--text-black);
+        margin-bottom: 5px;
+        line-height: 1.2;
+    }
+
+    #canx-premium-embed .license-text {
+        display: block;
+        font-size: 0.85rem;
+        color: var(--text-gray);
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    #canx-premium-embed .price-container {
+        display: flex;
+        align-items: flex-start; /* Align $ to top */
+        justify-content: center;
+        margin-top: 15px;
+        color: var(--text-black);
+    }
+
+    #canx-premium-embed .currency {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 6px;
+        margin-right: 2px;
+    }
+
+    #canx-premium-embed .amount {
+        font-size: 3.8rem;
+        font-weight: 700;
+        /* Using Dark Blue for Price Impact */
+        color: var(--blue-dark); 
+        line-height: 1;
+    }
+
+    #canx-premium-embed .duration {
+        font-size: 1rem;
+        color: #999;
+        font-weight: 500;
+        margin-left: 10px;
+        align-self: center; /* Center mins vertically */
+    }
+
+    /* --- BODY --- */
+    #canx-premium-embed .card-body {
+        padding: 35px 35px;
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    /* Refined List Styling */
+    #canx-premium-embed ul.features {
+        list-style-type: disc; 
+        list-style-position: outside; /* Puts bullet outside text block for clean alignment */
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    #canx-premium-embed ul.features li {
+        margin-bottom: 18px;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--text-gray);
+        font-weight: 400;
+    }
+
+    /* --- FOOTER --- */
+    #canx-premium-embed .card-footer {
+        padding: 0 35px 45px 35px;
+    }
+
+    /* === BUTTON (BLUE) === */
+    #canx-premium-embed a.cta-button,
+    #canx-premium-embed a.cta-button:visited,
+    #canx-premium-embed a.cta-button:hover,
+    #canx-premium-embed a.cta-button:active,
+    #canx-premium-embed a.cta-button:focus {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 18px 24px;
+        border-radius: 50px; 
+        text-decoration: none !important;
+        
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        
+        background: var(--brand-gradient) !important; 
+        
+        /* FORCE WHITE TEXT */
+        color: #ffffff !important; 
+        
+        border: none;
+        /* Blue Shadow */
+        box-shadow: 0 8px 20px rgba(57, 187, 249, 0.3);
+    }
+
+    #canx-premium-embed a.cta-button .arrow {
+        margin-left: 10px;
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+        line-height: 1;
+        color: #ffffff !important; 
+    }
+
+    #canx-premium-embed a.cta-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(25, 103, 176, 0.4);
+        /* Darker Blue Gradient on Hover */
+        background: linear-gradient(135deg, #39BBF9 0%, #1967B0 100%) !important;
+        color: #ffffff !important;
+    }
+
+    #canx-premium-embed a.cta-button:hover .arrow {
+        transform: translateX(6px);
+    }
+
+    @media (max-width: 768px) {
+        #canx-premium-embed .pricing-wrapper {
+            flex-direction: column;
+            align-items: center;
+            gap: 4rem;
+        }
+        #canx-premium-embed .pricing-card {
+            overflow: visible;
+        }
+    }

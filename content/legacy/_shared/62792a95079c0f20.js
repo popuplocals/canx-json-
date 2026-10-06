@@ -1,0 +1,3 @@
+
+var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"};
+//# sourceURL=wpforms-elementor-js-extra

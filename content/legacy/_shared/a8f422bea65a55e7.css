@@ -1,0 +1,150 @@
+
+    /* --- SECTION WRAPPER --- */
+    #why-book-section {
+        /* --- BRAND VARIABLES --- */
+        --blue-light: #39BBF9;
+        --blue-dark: #1967B0;
+        --brand-gradient: linear-gradient(135deg, #39BBF9 0%, #1967B0 100%);
+        
+        --text-black: #1a1a1a;
+        --text-gray: #555555;
+        
+        /* Background Colors */
+        --section-bg: transparent; 
+        --card-bg: #ffffff;
+        
+        /* Icon Specifics */
+        --icon-bg-light: #e0f4fe; 
+        
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--section-bg);
+        padding: 80px 20px;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+    }
+
+    #why-book-section * {
+        box-sizing: border-box;
+    }
+
+    #why-book-section .container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* --- HEADINGS --- */
+    #why-book-section h2.section-title {
+        color: var(--text-black);
+        font-size: 2.6rem;
+        margin-bottom: 50px; /* Increased space for elegance */
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    /* --- PREMIUM GRID LAYOUT --- */
+    #why-book-section .premium-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centers the 5 items nicely */
+        gap: 30px; 
+    }
+
+    /* --- CARD DESIGN --- */
+    #why-book-section .premium-card {
+        background: var(--card-bg);
+        border: 1px solid #f0f0f0; /* Very subtle border */
+        padding: 40px 30px;
+        border-radius: 20px;
+        
+        /* Layout dimensions for 3-column feel */
+        flex: 1 1 300px; 
+        max-width: 350px;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+        /* Elegant Shadow */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Top Accent Line (Hidden until hover for premium feel) */
+    #why-book-section .premium-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--brand-gradient);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    /* HOVER EFFECTS */
+    #why-book-section .premium-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(25, 103, 176, 0.15); /* Soft Blue Shadow */
+        border-color: rgba(57, 187, 249, 0.2);
+    }
+
+    #why-book-section .premium-card:hover::after {
+        opacity: 1;
+    }
+
+    /* --- ICON CIRCLE --- */
+    #why-book-section .icon-circle {
+        width: 65px;
+        height: 65px;
+        background-color: var(--icon-bg-light);
+        color: var(--blue-dark);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
+        transition: all 0.3s ease;
+    }
+
+    #why-book-section .icon-circle svg {
+        width: 28px;
+        height: 28px;
+        fill: currentColor;
+    }
+
+    /* Icon Hover Effect */
+    #why-book-section .premium-card:hover .icon-circle {
+        background: var(--brand-gradient);
+        color: #ffffff;
+        box-shadow: 0 10px 20px rgba(57, 187, 249, 0.3);
+    }
+
+    /* --- TEXT STYLE (Exact Match) --- */
+    #why-book-section .item-text {
+        font-size: 1.05rem; /* Matches your previous code */
+        color: var(--text-black);
+        line-height: 1.6;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+        #why-book-section {
+            padding: 50px 20px;
+        }
+        #why-book-section h2.section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        #why-book-section .premium-card {
+            max-width: 100%; /* Full width on mobile */
+            padding: 30px 20px;
+        }
+    }
