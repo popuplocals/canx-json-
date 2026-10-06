@@ -18,7 +18,7 @@ export function keyFor(segments: string[]) {
 
 export function listLegacyKeys(): string[] {
   if (!fs.existsSync(ROOT)) return [];
-  return fs.readdirSync(ROOT).filter((d) => !d.startsWith("_") && fs.existsSync(path.join(ROOT, d, "page.json")));
+  return fs.readdirSync(ROOT).filter((d) => !d.startsWith("_") && !d.startsWith("immigration-blogs") && fs.existsSync(path.join(ROOT, d, "page.json")));
 }
 
 export function getLegacyPage(segments: string[]): LegacyPage | null {
@@ -38,4 +38,17 @@ export function legacyDescription(p: LegacyManifest): string {
   const d = (p.meta_description || "").trim();
   if (d.length >= 50 && !/^published by|licensed rcic|^by anuj/i.test(d)) return d;
   return `${p.title_wp} — Can X Global Solutions Inc., licensed Canadian recruitment and immigration consultants in Surrey, BC. Talk to a regulated RCIC about your options.`.slice(0, 158);
+}
+
+/* Live-site SEO baseline lookup (title / description as crawled on 2026-10-06). */
+const BASELINE: Record<string, { title: string; meta_description: string }> = Object.fromEntries(
+  (JSON.parse(fs.readFileSync(path.join(process.cwd(), "content", "seo-baseline.json"), "utf8")) as { url: string; title: string; meta_description: string }[])
+    .map((r) => [r.url.replace(/^https:\/\/canxglobal\.com/, "").replace(/\/$/, "") || "/", { title: r.title, meta_description: r.meta_description }]),
+);
+export function liveSeo(pathname: string): { title: string; description: string } | null {
+  const r = BASELINE[pathname.replace(/\/$/, "") || "/"];
+  if (!r) return null;
+  const d = (r.meta_description || "").trim();
+  const good = d.length >= 50 && !/^published by|^by anuj|^anuj sengar|style\.css|licensed rcic/i.test(d);
+  return good ? { title: r.title, description: d } : null;
 }

@@ -5,6 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { CATEGORIES, CATEGORY_ORDER, SITE, getMostRead, getPostsByCategory } from "@/lib/content";
 import { BlogCard, NumRow, Pills } from "@/components/blog/cards";
+import { liveSeo } from "@/lib/legacy";
 import "../../../styles/blog.scoped.css";
 
 type Copy = {
@@ -26,8 +27,9 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   if (!c) return {};
   const copy = COPY[category];
   const n = getPostsByCategory(category).length;
-  const title = `${c.label} Canada 2026: Guides, Rules & Updates | Can X Global`;
-  const description = `${decode(copy?.desc || "")} ${n} expert articles from a licensed RCIC.`.trim().slice(0, 158);
+  const live = liveSeo(c.path);
+  const title = live?.title ?? `${c.label} Canada 2026: Guides, Rules & Updates | Can X Global`;
+  const description = live?.description ?? `${decode(copy?.desc || "")} ${n} expert articles from a licensed RCIC.`.trim().slice(0, 158);
   return {
     title,
     description,

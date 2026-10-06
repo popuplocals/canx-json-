@@ -72,11 +72,6 @@
     "permanent": true
   },
   {
-    "source": "/how-to-get-50-CRS-Points-in-Express-Entry-With-a-Certificate-of-Qualification/",
-    "destination": "/how-to-get-50-crs-points-in-express-entry-with-a-certificate-of-qualification/",
-    "permanent": true
-  },
-  {
     "source": "/express-entry-points-2026/",
     "destination": "/what-is-the-point-system-for-canadian-immigration-and-do-you-qualify/",
     "permanent": true
@@ -115,5 +110,45 @@
     "source": "/how-long-should-hiring-actually-take-the-time-to-hire-benchmarks-every-canadian-employer-needs/:page(\\d+)/",
     "destination": "/how-long-should-hiring-actually-take-the-time-to-hire-benchmarks-every-canadian-employer-needs/",
     "permanent": true
+  },
+  {
+    "source": "/category/immigration-blogs/",
+    "destination": "/immigration-blogs/",
+    "permanent": true
+  },
+  {
+    "source": "/category/recruitment-blogs/",
+    "destination": "/recruitment-blog/",
+    "permanent": true
+  },
+  {
+    "source": "/category/:slug/",
+    "destination": "/immigration-blogs/",
+    "permanent": true
+  },
+  {
+    "source": "/tag/:slug/",
+    "destination": "/immigration-blogs/",
+    "permanent": true
+  },
+  {
+    "source": "/author/:slug/",
+    "destination": "/team/anuj-sengar/",
+    "permanent": true
+  },
+  {
+    "source": "/feed/",
+    "destination": "/immigration-blogs/",
+    "permanent": true
+  },
+  {
+    "source": "/wp-admin/:path*",
+    "destination": "/",
+    "permanent": false
+  },
+  {
+    "source": "/wp-login.php",
+    "destination": "/",
+    "permanent": false
   }
 ]

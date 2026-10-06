@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CATEGORIES, CATEGORY_ORDER, SITE, getAllPosts, getMostRead, getPostsByCategory } from "@/lib/content";
 import { NumberedRow, Pane, Pills, PostCard, TrendingRow } from "@/components/blog/cards";
+import { liveSeo } from "@/lib/legacy";
 import "../../styles/blog.scoped.css";
 
-const TITLE = "Immigration Blogs: Canada Immigration News, Guides & Updates | Can X Global";
-const DESC =
+const live = liveSeo("/immigration-blogs/");
+const TITLE = live?.title ?? "Immigration Blogs: Canada Immigration News, Guides & Updates | Can X Global";
+const DESC = live?.description ??
   "Expert guides on Express Entry, LMIA, work permits, family sponsorship, study permits, PNP and more. Written by a licensed RCIC at Can X Global Solutions, Surrey BC.";
 
 export const metadata: Metadata = {

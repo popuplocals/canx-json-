@@ -134,7 +134,20 @@ export function formatDate(iso: string) {
 
 /* FAQ extraction from <details><summary>Q</summary><p>A</p></details> blocks */
 export function extractFaq(body: string): { q: string; a: string }[] {
-  return [...body.matchAll(/<details[^>]*>\s*<summary[^>]*>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/gi)]
+  const details = [...body.matchAll(/<details[^>]*>\s*<summary[^>]*>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/gi)]
     .map((m) => ({ q: stripTags(m[1]), a: stripTags(m[2]) }))
     .filter((f) => f.q && f.a);
+  if (details.length) return details;
+  // fallback: an "FAQ" / "Frequently Asked Questions" heading followed by h3/h4 questions with paragraph answers
+  const start = body.search(/<h2[^>]*>[^<]*(faq|frequently asked)[^<]*<\/h2>/i);
+  if (start < 0) return [];
+  const rest = body.slice(start);
+  const end = rest.slice(5).search(/<h2/i);
+  const section = end > 0 ? rest.slice(0, end + 5) : rest;
+  const out: { q: string; a: string }[] = [];
+  for (const m of section.matchAll(/<h[34][^>]*>([\s\S]*?)<\/h[34]>\s*((?:<p[^>]*>[\s\S]*?<\/p>\s*)+)/gi)) {
+    const q = stripTags(m[1]); const a = stripTags(m[2]);
+    if (q.length > 8 && a.length > 20 && /\?/.test(q)) out.push({ q, a });
+  }
+  return out;
 }

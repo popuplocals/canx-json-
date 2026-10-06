@@ -68,7 +68,13 @@ function PostView({ post }: { post: Post }) {
   const faq = extractFaq(post.body);
   const graph: Record<string, unknown>[] = [
     {
-      "@type": "BlogPosting", "@id": `${url}#article`, mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      "@type": "WebPage", "@id": url, url, name: post.seo.title, description: post.seo.description, isPartOf: { "@id": `${SITE}/#website` },
+      datePublished: post.date, dateModified: post.modified, inLanguage: "en-CA",
+      primaryImageOfPage: post.featured_image ? { "@type": "ImageObject", url: post.featured_image } : undefined,
+      breadcrumb: { "@id": `${url}#breadcrumb` },
+    },
+    {
+      "@type": "BlogPosting", "@id": `${url}#article`, mainEntityOfPage: { "@id": url },
       headline: post.title, description: post.seo.description, url, datePublished: post.date, dateModified: post.modified,
       author: { "@type": "Person", name: "Anuj Sengar", jobTitle: "Licensed RCIC R515178", url: "https://www.linkedin.com/in/anuj-sengar-aj" },
       publisher: { "@id": `${SITE}/#organization` },
