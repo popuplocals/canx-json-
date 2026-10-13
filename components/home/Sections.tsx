@@ -33,7 +33,7 @@ export function Logos({ d }: { d: HomeData["logos"] }) {
   return (
     <section className="cxh-logos" style={{ paddingTop: 40, paddingBottom: 40 }} aria-labelledby="lg-h">
       <div className="wrap center"><Reveal><div className="eyebrow">Clients</div><h2 id="lg-h">{d.heading}</h2></Reveal></div>
-      <Reveal className="mask" amount={0.1}>
+      <Reveal className="mask">
         <div className="track">{list.map((src, i) => <img key={i} src={src} alt="Client logo" loading="lazy" />)}</div>
       </Reveal>
       <Reveal className="sec-cta" style={{ marginTop: 30 }}><Magnetic><Link href={d.cta.href} className="btn btn-ghost">{d.cta.text} <Arrow /></Link></Magnetic></Reveal>
@@ -75,7 +75,7 @@ export function Tiers({ d }: { d: HomeData["tiers"] }) {
         <Reveal className="center"><div className="eyebrow">How we hire for you</div><Words as="h2" text="Local, global, remote, or LMIA-backed" /></Reveal>
         {d.items.map((t, i) => (
           <div className="row" key={t.title}>
-            <Reveal className="media" amount={0.3}>{t.image && <img src={t.image.src} alt={t.title} loading="lazy" />}</Reveal>
+            <Reveal className="media">{t.image && <img src={t.image.src} alt={t.title} loading="lazy" />}</Reveal>
             <Reveal delay={0.1}>
               <div className="num">0{i + 1}</div>
               <h3 style={{ fontSize: "1.7rem", marginBottom: 12 }}>{t.title}</h3>
@@ -94,7 +94,7 @@ export function Seekers({ d }: { d: HomeData["seekers"] }) {
   return (
     <section className="cxh-seekers" aria-labelledby="js-h">
       <div className="wrap">
-        <Reveal className="band" amount={0.3}>
+        <Reveal className="band">
           <div>
             <div className="eyebrow" style={{ color: "#39bbf9" }}>Candidates</div>
             <h2 id="js-h">{d.heading}</h2>
@@ -122,7 +122,7 @@ export function Easy({ d }: { d: HomeData["easy"] }) {
             {d.lines.map((l) => <p key={l} className="quote">{l}</p>)}
             <Magnetic><Link href={d.cta.href} className="btn btn-primary">{d.cta.text} <Arrow /></Link></Magnetic>
           </Reveal>
-          <Reveal className="media" delay={0.15} amount={0.3}>{d.image && <img src={d.image.src} alt="Canadian passport and map" loading="lazy" />}</Reveal>
+          <Reveal className="media" delay={0.15}>{d.image && <img src={d.image.src} alt="Canadian passport and map" loading="lazy" />}</Reveal>
         </div>
         <Reveal className="center"><Words as="h2" text={d.sub} /></Reveal>
         <Stagger className="grid-3" gap={0.07}>
@@ -143,7 +143,7 @@ export function Countries({ d, children }: { d: HomeData["countries"]; children:
     <section className="cxh-map" aria-labelledby="co-h">
       <div className="wrap">
         <Reveal className="center"><div className="eyebrow">Worldwide</div><Words as="h2" text={d.heading} /><p className="lead">{d.text}</p></Reveal>
-        <Reveal amount={0.2}>{children}</Reveal>
+        <Reveal>{children}</Reveal>
         <Reveal className="sec-cta"><Magnetic><Link href={d.cta.href} className="btn btn-primary">{d.cta.text} <Arrow /></Link></Magnetic></Reveal>
       </div>
     </section>

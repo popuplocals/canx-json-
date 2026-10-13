@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CATEGORIES, type Post } from "@/lib/content";
 import TiltCard from "@/components/motion/TiltCard";
-import { Item } from "@/components/motion/Reveal";
+import { Item, Reveal } from "@/components/motion/Reveal";
 
 /* chip class suffix used by blog.css (--ce, --cf, …) */
 export const CHIP: Record<string, string> = {
@@ -94,7 +94,7 @@ export function Pane({ post, big = false }: { post: Post; big?: boolean }) {
 export function BlogCard({ post }: { post: Post }) {
   const color = CATEGORIES[post.category]?.color ?? "#1967B0";
   return (
-    <Item><TiltCard style={{ height: "100%" }}><Link href={`/${post.slug}/`} className="blog-card">
+    <Reveal style={{ height: "100%" }}><TiltCard style={{ height: "100%" }}><Link href={`/${post.slug}/`} className="blog-card">
       <div className="card-img">
         <Img post={post} />
         <div className="canx-mark">⊙CAN<span>X</span></div>
@@ -106,7 +106,7 @@ export function BlogCard({ post }: { post: Post }) {
           <span className="card-read">Read →</span>
         </div>
       </div>
-    </Link></TiltCard></Item>
+    </Link></TiltCard></Reveal>
   );
 }
 

@@ -83,7 +83,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         <div className="maple-bg" aria-hidden>🍁</div>
         <div className="wrap">
           <div className="sub-hero-grid">
-            <Reveal className="sub-hero-left" amount={0.2}>
+            <Reveal className="sub-hero-left">
               <div className="topic-eyebrow">{c.label}</div>
               <h1 dangerouslySetInnerHTML={{ __html: copy?.h1_html || c.label }} />
               <p className="sub-desc">{decode(copy?.desc || "")}</p>
@@ -93,10 +93,6 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 <div className="h-stat"><b>{avgRead} min</b><span>Avg Read</span></div>
               </div>
             </Reveal>
-            <div className="sub-hero-img">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              {copy?.hero_img && <img src={copy.hero_img} alt={`${c.label} Canada`} loading="eager" />}
-            </div>
           </div>
         </div>
       </section>
@@ -121,9 +117,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
             </div>
 
             <Reveal className="sec-hd"><h2>Latest Articles</h2></Reveal>
-            <Stagger className="blog-grid" gap={0.06}>
+            <div className="blog-grid">
               {posts.map((p) => <BlogCard key={p.slug} post={p} />)}
-            </Stagger>
+            </div>
 
             {mostRead.length > 0 && (
               <div style={{ marginTop: 52 }}>

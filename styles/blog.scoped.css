@@ -988,3 +988,7 @@
 .cxb .cta-box{padding:48px clamp(20px,5vw,40px);}
 .cxb .light-sec, .cxb .off-sec, .cxb .accent-sec, .cxb .blue-tint{padding:40px 0;}
 }
+
+/* category hero: text only, no side image */
+.cxb .sub-hero-grid{grid-template-columns:1fr;}
+.cxb .sub-hero-left{padding-bottom:40px;max-width:820px;}
