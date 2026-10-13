@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CATEGORIES, CATEGORY_ORDER, SITE, getAllPosts, getMostRead, getPostsByCategory } from "@/lib/content";
 import { NumberedRow, Pane, Pills, PostCard, TrendingRow } from "@/components/blog/cards";
 import { liveSeo } from "@/lib/legacy";
+import { Reveal, Stagger } from "@/components/motion/Reveal";
 import "../../styles/blog.scoped.css";
 
 const live = liveSeo("/immigration-blogs/");
@@ -54,10 +55,10 @@ export default function BlogIndex() {
 
       <section className="trending">
         <div className="wrap">
-          <div className="sec-label"><h2>Trending Now</h2></div>
-          <div className="tr-list">
+          <Reveal className="sec-label"><h2>Trending Now</h2></Reveal>
+          <Stagger className="tr-list">
             {trending.map((p, i) => <TrendingRow key={p.slug} post={p} n={i + 1} />)}
-          </div>
+          </Stagger>
         </div>
       </section>
 
@@ -69,16 +70,16 @@ export default function BlogIndex() {
         return (
           <section key={slug} className={["off-sec", "light-sec", "accent-sec"][i % 3]}>
             <div className="wrap">
-              <div className="sec-label">
+              <Reveal className="sec-label">
                 <h2><Link href={c.path} style={{ color: "inherit", textDecoration: "none" }}>{c.label}</Link></h2>
                 <Link href={c.path} className="sa">View all</Link>
-              </div>
+              </Reveal>
               {list ? (
-                posts.slice(0, 5).map((p, n) => <NumberedRow key={p.slug} post={p} n={n + 1} />)
+                <Stagger>{posts.slice(0, 5).map((p, n) => <NumberedRow key={p.slug} post={p} n={n + 1} />)}</Stagger>
               ) : (
-                <div className="g5">
+                <Stagger className="g5">
                   {posts.slice(0, 5).map((p, n) => <PostCard key={p.slug} post={p} showChipOnImage={n === 0} />)}
-                </div>
+                </Stagger>
               )}
             </div>
           </section>

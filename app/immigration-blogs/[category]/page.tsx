@@ -6,6 +6,7 @@ import path from "node:path";
 import { CATEGORIES, CATEGORY_ORDER, SITE, getMostRead, getPostsByCategory } from "@/lib/content";
 import { BlogCard, NumRow, Pills } from "@/components/blog/cards";
 import { liveSeo } from "@/lib/legacy";
+import { Reveal, Stagger } from "@/components/motion/Reveal";
 import "../../../styles/blog.scoped.css";
 
 type Copy = {
@@ -82,7 +83,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         <div className="maple-bg" aria-hidden>🍁</div>
         <div className="wrap">
           <div className="sub-hero-grid">
-            <div className="sub-hero-left">
+            <Reveal className="sub-hero-left" amount={0.2}>
               <div className="topic-eyebrow">{c.label}</div>
               <h1 dangerouslySetInnerHTML={{ __html: copy?.h1_html || c.label }} />
               <p className="sub-desc">{decode(copy?.desc || "")}</p>
@@ -91,7 +92,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 <div className="h-stat"><b>{latestYear}</b><span>Updated</span></div>
                 <div className="h-stat"><b>{avgRead} min</b><span>Avg Read</span></div>
               </div>
-            </div>
+            </Reveal>
             <div className="sub-hero-img">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               {copy?.hero_img && <img src={copy.hero_img} alt={`${c.label} Canada`} loading="eager" />}
@@ -119,17 +120,17 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
               <p className="filter-count">Showing <strong>{posts.length} articles</strong> in {c.label}</p>
             </div>
 
-            <div className="sec-hd"><h2>Latest Articles</h2></div>
-            <div className="blog-grid">
+            <Reveal className="sec-hd"><h2>Latest Articles</h2></Reveal>
+            <Stagger className="blog-grid" gap={0.06}>
               {posts.map((p) => <BlogCard key={p.slug} post={p} />)}
-            </div>
+            </Stagger>
 
             {mostRead.length > 0 && (
               <div style={{ marginTop: 52 }}>
-                <div className="sec-hd"><h2>Most Read</h2></div>
-                <div className="num-list">
+                <Reveal className="sec-hd"><h2>Most Read</h2></Reveal>
+                <Stagger className="num-list">
                   {mostRead.map((p, i) => <NumRow key={p.slug} post={p} n={i + 1} />)}
-                </div>
+                </Stagger>
               </div>
             )}
           </main>

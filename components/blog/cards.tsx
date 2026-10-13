@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { CATEGORIES, type Post } from "@/lib/content";
+import TiltCard from "@/components/motion/TiltCard";
+import { Item } from "@/components/motion/Reveal";
 
 /* chip class suffix used by blog.css (--ce, --cf, …) */
 export const CHIP: Record<string, string> = {
@@ -29,7 +31,7 @@ export function Img({ post, eager = false }: { post: Post; eager?: boolean }) {
 /* 5-card grid card (.g5 > .pc) */
 export function PostCard({ post, showChipOnImage = false }: { post: Post; showChipOnImage?: boolean }) {
   return (
-    <Link href={`/${post.slug}/`} className="pc">
+    <Item><TiltCard style={{ height: "100%" }}><Link href={`/${post.slug}/`} className="pc">
       <div className="pct">
         <Img post={post} />
         {showChipOnImage && <Chip cat={post.category} />}
@@ -41,35 +43,35 @@ export function PostCard({ post, showChipOnImage = false }: { post: Post; showCh
           <span className="rd">Read →</span>
         </div>
       </div>
-    </Link>
+    </Link></TiltCard></Item>
   );
 }
 
 /* numbered list row (.nl-row) */
 export function NumberedRow({ post, n }: { post: Post; n: number }) {
   return (
-    <Link href={`/${post.slug}/`} className="nl-row">
+    <Item><Link href={`/${post.slug}/`} className="nl-row">
       <span className="nl-n">{String(n).padStart(2, "0")}</span>
       <div className="nl-img"><Img post={post} /></div>
       <div className="nl-b">
         <Chip cat={post.category} />
         <h4>{post.title}</h4>
       </div>
-    </Link>
+    </Link></Item>
   );
 }
 
 /* trending row (.tr-row) */
 export function TrendingRow({ post, n }: { post: Post; n: number }) {
   return (
-    <Link href={`/${post.slug}/`} className="tr-row">
+    <Item><Link href={`/${post.slug}/`} className="tr-row">
       <div className="tr-n">{String(n).padStart(2, "0")}</div>
       <div className="tr-img"><Img post={post} /></div>
       <div className="tr-b">
         <div className="tr-title">{post.title}</div>
         <div><Chip cat={post.category} /></div>
       </div>
-    </Link>
+    </Link></Item>
   );
 }
 
@@ -92,7 +94,7 @@ export function Pane({ post, big = false }: { post: Post; big?: boolean }) {
 export function BlogCard({ post }: { post: Post }) {
   const color = CATEGORIES[post.category]?.color ?? "#1967B0";
   return (
-    <Link href={`/${post.slug}/`} className="blog-card">
+    <Item><TiltCard style={{ height: "100%" }}><Link href={`/${post.slug}/`} className="blog-card">
       <div className="card-img">
         <Img post={post} />
         <div className="canx-mark">⊙CAN<span>X</span></div>
@@ -104,7 +106,7 @@ export function BlogCard({ post }: { post: Post }) {
           <span className="card-read">Read →</span>
         </div>
       </div>
-    </Link>
+    </Link></TiltCard></Item>
   );
 }
 
@@ -112,14 +114,14 @@ export function BlogCard({ post }: { post: Post }) {
 export function NumRow({ post, n }: { post: Post; n: number }) {
   const color = CATEGORIES[post.category]?.color ?? "#1967B0";
   return (
-    <Link href={`/${post.slug}/`} className="num-row">
+    <Item><Link href={`/${post.slug}/`} className="num-row">
       <span className="num-n">{String(n).padStart(2, "0")}</span>
       <div className="num-thumb"><Img post={post} /></div>
       <div className="num-body">
         <span className="num-chip" style={{ background: color }}>{post.categoryLabel}</span>
         <p className="num-title">{post.title}</p>
       </div>
-    </Link>
+    </Link></Item>
   );
 }
 

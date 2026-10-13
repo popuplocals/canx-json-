@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { CATEGORIES, formatDate, getMostRead, getRelated, type Post } from "@/lib/content";
 import "../../styles/post.css";
+import ScrollProgress from "@/components/motion/ScrollProgress";
+import TiltCard from "@/components/motion/TiltCard";
+import { Reveal, Stagger, Item } from "@/components/motion/Reveal";
 
 const AVATAR = "/wp-content/uploads/2026/05/anuj-avatar-400.png";
 
@@ -21,6 +24,7 @@ export default function PostLayout({ post }: { post: Post }) {
 
   return (
     <div className="page-wrap" style={{ ["--cat" as string]: cat?.color ?? "#1967B0" }}>
+      <ScrollProgress />
       <div className="content-grid">
         <main className="article-card">
           {post.featured_image && (
@@ -74,19 +78,19 @@ export default function PostLayout({ post }: { post: Post }) {
           <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.body }} />
 
           <div className="article-inner" style={{ paddingTop: 0 }}>
-            <div className="note-box">
+            <Reveal><div className="note-box">
               <h3>Need help with your Canadian immigration or hiring plan?</h3>
               <p>Book a consultation with Can X Global Solutions. We have helped clients from more than 30 countries make Canada home.</p>
               <div className="cta-wrap">
                 <Link href="/get-started/" className="cta-btn">Book a Consultation</Link>
               </div>
-            </div>
+            </div></Reveal>
           </div>
         </main>
 
         <aside className="sidebar">
           {related.length > 0 && (
-            <div className="widget">
+            <Reveal className="widget" delay={0.1}>
               <div className="widget-title">Top Stories</div>
               {related.map((r) => (
                 <div className="story-item" key={r.slug}>
@@ -96,25 +100,25 @@ export default function PostLayout({ post }: { post: Post }) {
                   </Link>
                 </div>
               ))}
-            </div>
+            </Reveal>
           )}
-          <div className="sidebar-cta">
+          <Reveal className="sidebar-cta" delay={0.2}>
             <h4>Talk to a Licensed RCIC</h4>
             <p>Get a clear, honest assessment of your options from a regulated Canadian immigration consultant.</p>
             <Link href="/get-started/">Book a Consultation</Link>
-          </div>
+          </Reveal>
         </aside>
       </div>
 
       {mostRead.length > 0 && (
         <section className="most-read-section">
-          <div className="most-read-head">
+          <Reveal className="most-read-head">
             <h2>Most Read</h2>
             <Link href="/immigration-blogs/">View all →</Link>
-          </div>
-          <div className="mr-grid">
+          </Reveal>
+          <Stagger className="mr-grid">
             {mostRead.map((m) => (
-              <Link href={`/${m.slug}/`} className="mr-card" key={m.slug}>
+              <Item key={m.slug}><TiltCard style={{ height: "100%" }}><Link href={`/${m.slug}/`} className="mr-card">
                 <div className="mr-img">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   {m.featured_image && <img src={m.featured_image} alt={m.featured_alt || m.title} loading="lazy" />}
@@ -123,9 +127,9 @@ export default function PostLayout({ post }: { post: Post }) {
                   <span className="story-tag" style={{ ["--c" as string]: CATEGORIES[m.category]?.color }}>{m.categoryLabel}</span>
                   <h3>{m.title}</h3>
                 </div>
-              </Link>
+              </Link></TiltCard></Item>
             ))}
-          </div>
+          </Stagger>
         </section>
       )}
     </div>
