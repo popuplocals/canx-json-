@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { CATEGORIES, formatDate, getMostRead, getRelated, type Post } from "@/lib/content";
+import { CATEGORIES, formatDate, getMostRead, getRelated, withHeadingIds, type Post } from "@/lib/content";
+import Toc from "./Toc";
+import FaqEnhancer from "./FaqEnhancer";
 import "../../styles/post.css";
 import ScrollProgress from "@/components/motion/ScrollProgress";
 import TiltCard from "@/components/motion/TiltCard";
@@ -21,6 +23,7 @@ export default function PostLayout({ post }: { post: Post }) {
   const url = `https://canxglobal.com/${post.slug}/`;
   const enc = encodeURIComponent(url);
   const updated = post.modified.slice(0, 10) !== post.date.slice(0, 10);
+  const { html: bodyHtml, toc } = withHeadingIds(post.body);
 
   return (
     <div className="page-wrap" style={{ ["--cat" as string]: cat?.color ?? "#1967B0" }}>
@@ -75,7 +78,8 @@ export default function PostLayout({ post }: { post: Post }) {
             </div>
           </div>
 
-          <div className="blog-content" dangerouslySetInnerHTML={{ __html: post.body }} />
+          <div className="blog-content" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+          <FaqEnhancer />
 
           <div className="article-inner" style={{ paddingTop: 0 }}>
             <Reveal><div className="note-box">
@@ -89,6 +93,7 @@ export default function PostLayout({ post }: { post: Post }) {
         </main>
 
         <aside className="sidebar">
+          <Toc items={toc} />
           {related.length > 0 && (
             <Reveal className="widget" delay={0.1}>
               <div className="widget-title">Top Stories</div>

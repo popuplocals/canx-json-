@@ -132,6 +132,21 @@ export function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric", timeZone: "America/Vancouver" });
 }
 
+/* Add stable ids to <h2> headings and return a table of contents. */
+export function withHeadingIds(body: string): { html: string; toc: { id: string; text: string }[] } {
+  const toc: { id: string; text: string }[] = [];
+  const seen = new Set<string>();
+  const html = body.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/gi, (m, attrs: string, inner: string) => {
+    const text = stripTags(inner);
+    if (!text || /frequently asked|^faq/i.test(text)) return m;
+    let id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "section";
+    while (seen.has(id)) id += "-2";
+    seen.add(id); toc.push({ id, text });
+    return attrs.includes("id=") ? m : `<h2 id="${id}"${attrs}>${inner}</h2>`;
+  });
+  return { html, toc };
+}
+
 /* FAQ extraction from <details><summary>Q</summary><p>A</p></details> blocks */
 export function extractFaq(body: string): { q: string; a: string }[] {
   const details = [...body.matchAll(/<details[^>]*>\s*<summary[^>]*>([\s\S]*?)<\/summary>([\s\S]*?)<\/details>/gi)]

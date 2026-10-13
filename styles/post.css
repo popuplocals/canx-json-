@@ -163,3 +163,18 @@
 .mr-title { color: var(--text-heading); font-weight: 600; font-size: 0.98rem; line-height: 1.4; margin: 0; }
 @media (max-width: 1024px) { .mr-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .mr-grid { grid-template-columns: 1fr; } }
+
+/* Table of contents (sticky sidebar) */
+.widget.toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; max-height: 48vh; overflow: auto; }
+.widget.toc li { counter-increment: toc; border-left: 2px solid rgba(25,103,176,.12); transition: border-color .3s; }
+.widget.toc li a { display: block; padding: 7px 12px; font-size: .86rem; color: #475569; text-decoration: none; line-height: 1.4; transition: color .25s, transform .3s cubic-bezier(.22,1,.36,1); }
+.widget.toc li a::before { content: counter(toc, decimal-leading-zero) " "; color: var(--brand-light); font-weight: 600; margin-right: 6px; }
+.widget.toc li:hover a { color: var(--brand-dark); transform: translateX(3px); }
+.widget.toc li.on { border-left-color: var(--brand-dark); }
+.widget.toc li.on a { color: var(--brand-dark); font-weight: 600; }
+.sidebar { position: sticky; top: 90px; }
+/* FAQ accordion with enhanced motion */
+.blog-content details.faq-enh summary::after { transition: transform .4s cubic-bezier(.22,1,.36,1); }
+.blog-content details.faq-enh[open] summary::after { transform: rotate(180deg); content: "▾"; }
+.blog-content details.faq-enh[open] summary { color: var(--brand-dark); }
+.blog-content details.faq-enh summary:hover { background: rgba(25,103,176,.04); }
