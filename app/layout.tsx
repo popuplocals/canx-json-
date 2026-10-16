@@ -5,6 +5,7 @@ import "./globals.css";
 import "../styles/header.css";
 import "../styles/footer.css";
 import "../styles/motion.css";
+import "../styles/legacy.css";
 import SmoothScroll from "@/components/motion/SmoothScroll";
 import SiteHeader from "@/components/shell/SiteHeader";
 import SiteFooter from "@/components/shell/SiteFooter";

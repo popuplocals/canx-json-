@@ -1,0 +1,21 @@
+/* ───────── Mirrored Elementor ("legacy") pages ─────────
+   Deterministic fixes that must not depend on Elementor's runtime JS having run
+   (after a client-side navigation the widget handlers may initialise late or not at all). */
+
+/* Elementor Pro "Posts" widget with an image ratio: the thumbnail box is sized by padding-bottom,
+   so the image must fill it (cover-cropped, centred) instead of sitting at its natural height
+   above an empty band. Mirrors what the live site looks like once Elementor's fitImages() has run. */
+#cx-legacy-root .elementor-posts-container.elementor-has-item-ratio .elementor-post__thumbnail {
+  position: relative;
+  overflow: hidden;
+}
+#cx-legacy-root .elementor-posts-container.elementor-has-item-ratio .elementor-post__thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  transform: none;
+}

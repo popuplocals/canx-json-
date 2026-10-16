@@ -13,7 +13,7 @@ export default function LegacyPage({ page }: { page: LegacyPageData }) {
   return (
     <>
       {/* Astra/Elementor CSS targets body.<class>; apply before paint */}
-      <script dangerouslySetInnerHTML={{ __html: `document.body.className+=" ${bodyClass} cx-legacy";window.__cxLegacyBooted=true;` }} />
+      <script dangerouslySetInnerHTML={{ __html: `document.body.className+=" ${bodyClass} cx-legacy";window.__cxLegacyBooted=true;window.__cxLegacyFull=location.pathname;` }} />
       {page.stylesheets.map((href) => (
         // eslint-disable-next-line @next/next/no-css-tags
         <link key={href} rel="stylesheet" href={href} precedence="legacy" />

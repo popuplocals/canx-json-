@@ -150,5 +150,10 @@
     "source": "/wp-login.php",
     "destination": "/",
     "permanent": false
+  },
+  {
+    "source": "/building-a-better-team-turning-challenges-into-success/",
+    "destination": "/building-a-better-team/",
+    "permanent": true
   }
 ]
