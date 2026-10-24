@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
-import { getHome } from "@/lib/home";
-import { getAllPosts, SITE } from "@/lib/content";
+import { notFound } from "next/navigation";
 import { getLegacyPage, legacyDescription } from "@/lib/legacy";
-import Hero from "@/components/home/Hero";
-import Pathways from "@/components/home/Pathways";
-import WorldMap from "@/components/home/WorldMap";
-import { Challenges, Logos, FeatureCards, Tiers, Seekers, Easy, Countries, Blogs } from "@/components/home/Sections";
-import "../styles/home.css";
+import { LegacyView } from "./[...path]/page";
+import HomeWorldMap from "@/components/home/HomeWorldMap";
+
+/**
+ * Home page = the original Can X Global home exactly as it was on WordPress/Elementor
+ * (hero, sections, copy, animations, colours, fonts), mirrored 1:1 in content/legacy/home.
+ * The single addition is the interactive world map, placed in the
+ * "Trusted by Clients from 30+ Countries" section (between its paragraph and its button).
+ *
+ * The earlier native redesign (components/home/*, styles/home.css, lib/home.ts) is no longer used
+ * here; it stays in git history (commit 5539045 and earlier) if it is ever wanted again.
+ */
+const MAP_SLOT = '<div id="cx-worldmap-slot" class="cxhm"></div>';
+const BEFORE_BUTTON = '<div class="elementor-element elementor-element-c1138e5 ';
 
 const live = getLegacyPage([]);
 const TITLE = live?.seo_title || "Recruitment and Immigration Experts in Canada | Can X Global";
@@ -16,37 +24,18 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: "/" },
-  openGraph: { type: "website", url: "/", title: TITLE, description: DESC, images: ["/wp-content/uploads/2025/11/canX-hmepage-picture@3x-1-1-1.png.webp"] },
+  openGraph: { type: "website", url: "/", title: live?.og_title || TITLE, description: DESC, images: ["/wp-content/uploads/2025/11/canX-hmepage-picture@3x-1-1-1.png.webp"] },
   twitter: { card: "summary_large_image", title: TITLE, description: DESC },
 };
 
 export default function Home() {
-  const d = getHome();
-  const posts = getAllPosts().filter((p) => p.categories.includes("immigration-blogs")).slice(0, 3);
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      { "@type": "WebPage", "@id": `${SITE}/`, url: `${SITE}/`, name: TITLE, description: DESC, isPartOf: { "@id": `${SITE}/#website` }, about: { "@id": `${SITE}/#organization` }, inLanguage: "en-CA" },
-      {
-        "@type": "ItemList", name: "Immigration pathways",
-        itemListElement: d.pathways.map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.title, url: `${SITE}${p.href}` })),
-      },
-    ],
-  };
+  if (!live) notFound();
+  const i = live.body.indexOf(BEFORE_BUTTON);
+  const body = i === -1 ? live.body : live.body.slice(0, i) + MAP_SLOT + live.body.slice(i);
   return (
-    <main className="cxh">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Hero d={d.hero} />
-      <Challenges d={d.challenges} />
-      <Logos d={d.logos} />
-      <FeatureCards heading={d.beyond.heading} items={d.beyond.items} cta={d.beyond.cta} eyebrow="Why Can X" />
-      <Tiers d={d.tiers} />
-      <Seekers d={d.seekers} />
-      <Easy d={d.easy} />
-      <FeatureCards heading={d.trust.heading} items={d.trust.items} cta={d.trust.cta} eyebrow="Our promise" photo tone="mist" />
-      <Pathways items={d.pathways} />
-      <Countries d={d.countries}><WorldMap /></Countries>
-      <Blogs d={d.blogs} posts={posts} />
-    </main>
+    <>
+      <LegacyView page={{ ...live, body }} />
+      <HomeWorldMap />
+    </>
   );
 }
