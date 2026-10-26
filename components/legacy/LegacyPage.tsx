@@ -1,5 +1,6 @@
 import type { LegacyPage as LegacyPageData } from "@/lib/legacy";
 import LegacyRuntime from "./LegacyRuntime";
+import LegacyMotion from "@/components/motion/LegacyMotion";
 
 /**
  * Renders a mirrored WordPress/Elementor page inside the Next.js shell.
@@ -29,6 +30,7 @@ export default function LegacyPage({ page }: { page: LegacyPageData }) {
           <script key={i} id={s.id ?? undefined} dangerouslySetInnerHTML={{ __html: page.inlineScripts[s.inline] ?? "" }} />
         ) : null,
       )}
+      <LegacyMotion />
       <LegacyRuntime scripts={page.scripts.map((s) => (s.src ? { src: s.src } : { inline: page.inlineScripts[s.inline!] ?? "" }))} bodyClass={bodyClass} />
     </>
   );

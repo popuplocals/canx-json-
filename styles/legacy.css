@@ -19,3 +19,29 @@
   object-fit: cover;
   transform: none;
 }
+
+/* ───────── Motion layer (animation only: no size, colour, font or layout changes) ─────────
+   Elementor's own entrance animations are replaced by LegacyMotion's. Content is never hidden
+   by CSS: LegacyMotion hides below-the-fold items from JS and always restores them. */
+body.cx-legacy .elementor-invisible { visibility: visible !important; }
+body.cx-legacy .animated { animation: none !important; }
+
+/* hover physics — transform/shadow only */
+body.cx-legacy .elementor-widget-icon-box .elementor-icon-box-wrapper,
+body.cx-legacy .elementor-widget-image-box .elementor-image-box-wrapper,
+body.cx-legacy .elementor-post__card { transition: transform .55s cubic-bezier(.22,1,.36,1), box-shadow .55s cubic-bezier(.22,1,.36,1); will-change: transform; }
+@media (hover: hover) {
+  body.cx-legacy .elementor-widget-icon-box:hover .elementor-icon-box-wrapper,
+  body.cx-legacy .elementor-widget-image-box:hover .elementor-image-box-wrapper { transform: translateY(-8px); }
+  body.cx-legacy .elementor-post__card:hover { transform: translateY(-8px); box-shadow: 0 22px 44px rgba(7,104,181,.16); }
+  body.cx-legacy .elementor-post__thumbnail img { transition: transform .9s cubic-bezier(.22,1,.36,1) !important; }
+  body.cx-legacy .elementor-post__card:hover .elementor-post__thumbnail img { transform: scale(1.06); }
+  body.cx-legacy .elementor-widget-icon-box:hover .elementor-icon svg,
+  body.cx-legacy .elementor-widget-icon-box:hover .elementor-icon i { transform: scale(1.12) rotate(-4deg); }
+  body.cx-legacy .elementor-icon svg, body.cx-legacy .elementor-icon i { transition: transform .5s cubic-bezier(.22,1,.36,1); }
+}
+/* the 1px scale on ratio thumbnails must not fight the hover zoom */
+#cx-legacy-root .elementor-posts-container.elementor-has-item-ratio .elementor-post__card:hover .elementor-post__thumbnail img { transform: scale(1.06); }
+@media (prefers-reduced-motion: reduce) {
+  body.cx-legacy .elementor-post__card:hover, body.cx-legacy .elementor-widget-icon-box:hover .elementor-icon-box-wrapper { transform: none; }
+}
