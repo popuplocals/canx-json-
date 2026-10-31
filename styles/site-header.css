@@ -115,7 +115,7 @@ header.hd.hd { position: fixed !important; top: 0 !important; left: 0; right: 0;
 .hd-mega[data-open="1"] { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0) scale(1); transition-delay: 0s; }
 .hd-mega-narrow { width: min(760px, calc(100vw - 32px)); }
 .hd-mega-box {
-  max-height: calc(100vh - 140px); overflow: auto; border-radius: 26px; border: 1px solid var(--line); background: rgba(255, 255, 255, .97);
+  max-height: calc(100vh - 140px); overflow: auto; border-radius: 26px; border: 1px solid var(--line); background: #fff; isolation: isolate;
   box-shadow: 0 30px 80px rgba(7, 62, 112, .22), 0 4px 14px rgba(7, 62, 112, .08); overscroll-behavior: contain;
 }
 .hd-sub-title { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); margin: 0 0 12px; }
