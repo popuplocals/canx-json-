@@ -13,7 +13,7 @@ import HomeWorldMap from "@/components/home/HomeWorldMap";
  * The earlier native redesign (components/home/*, styles/home.css, lib/home.ts) is no longer used
  * here; it stays in git history (commit 5539045 and earlier) if it is ever wanted again.
  */
-const MAP_SLOT = '<div id="cx-worldmap-slot" class="cxhm"></div>';
+const MAP_SLOT = '<div id="cx-worldmap-slot" class="cxhm" data-paused="1"></div>';
 const BEFORE_BUTTON = '<div class="elementor-element elementor-element-c1138e5 ';
 
 const live = getLegacyPage([]);

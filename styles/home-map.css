@@ -5,7 +5,8 @@
   width: 100%;
   padding: 10px clamp(12px, 4vw, 40px) 30px;
 }
-.cxhm .mapwrap { position: relative; margin: 0 auto; max-width: 1100px; }
+.cxhm .mapwrap { position: relative; margin: 0 auto; max-width: 1100px; contain: layout paint; }
+.cxhm[data-paused="1"] .ring { animation-play-state: paused; }
 .cxhm .mapwrap > svg { width: 100% !important; height: auto !important; max-width: none !important; aspect-ratio: 1000 / 520; display: block; }
 .cxhm .land { fill: #e4ecf6; stroke: #fff; stroke-width: .4; }
 .cxhm .dot { fill: var(--deep); }

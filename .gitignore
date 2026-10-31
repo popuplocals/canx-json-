@@ -43,3 +43,5 @@ next-env.d.ts
 # build artefacts
 build.log
 start.log
+
+*.log

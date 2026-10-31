@@ -29,7 +29,7 @@ body.cx-legacy .animated { animation: none !important; }
 /* hover physics — transform/shadow only */
 body.cx-legacy .elementor-widget-icon-box .elementor-icon-box-wrapper,
 body.cx-legacy .elementor-widget-image-box .elementor-image-box-wrapper,
-body.cx-legacy .elementor-post__card { transition: transform .55s cubic-bezier(.22,1,.36,1), box-shadow .55s cubic-bezier(.22,1,.36,1); will-change: transform; }
+body.cx-legacy .elementor-post__card { transition: transform .55s cubic-bezier(.22,1,.36,1), box-shadow .55s cubic-bezier(.22,1,.36,1); }
 @media (hover: hover) {
   body.cx-legacy .elementor-widget-icon-box:hover .elementor-icon-box-wrapper,
   body.cx-legacy .elementor-widget-image-box:hover .elementor-image-box-wrapper { transform: translateY(-8px); }
@@ -45,3 +45,8 @@ body.cx-legacy .elementor-post__card { transition: transform .55s cubic-bezier(.
 @media (prefers-reduced-motion: reduce) {
   body.cx-legacy .elementor-post__card:hover, body.cx-legacy .elementor-widget-icon-box:hover .elementor-icon-box-wrapper { transform: none; }
 }
+
+/* Performance: Elementor/Swiper leave 20+ infinitely spinning "lazy preloader" rings in the markup
+   although images are already loaded (lazy-loading is undone in the mirror). They only cost frames. */
+body.cx-legacy .swiper-lazy-preloader, body.cx-legacy .swiper-lazy-preloader::after { animation: none !important; }
+body.cx-legacy .swiper-lazy-preloader { display: none !important; }
