@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import "../styles/header.css";
+import "../styles/site-header.css";
 import "../styles/footer.css";
 import "../styles/motion.css";
 import "../styles/legacy.css";
