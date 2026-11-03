@@ -45,3 +45,29 @@
 }
 .cxf-grid > div { min-width: 0; }
 .cxf-contact li a { overflow-wrap: anywhere; }
+
+/* The mirrored theme's link colour (.elementor-kit-16105 a) outranks the footer's — pin the footer colours. */
+footer.cxf a, footer.cxf a:visited { color: inherit; }
+footer.cxf .cxf-social a { color: #fff; }
+footer.cxf .cxf-social a:hover { color: #0768b5; }
+footer.cxf .cxf-social svg { width: 15px; height: 15px; display: block; }
+footer.cxf .cxf-list li a, footer.cxf .cxf-contact a, footer.cxf .cxf-below a { color: #fff; }
+footer.cxf .cxf-below a { color: #d7dbe0; }
+footer.cxf .cxf-list li a:hover, footer.cxf .cxf-contact a:hover { color: #c2e4ff; }
+footer.cxf .cxf-btn, footer.cxf .cxf-btn:hover { color: #fff; }
+@media (max-width: 640px) {
+  .cxf-logo { padding: 8px 14px; margin-bottom: 18px; }
+  .cxf-logo img { width: 160px; }
+  .cxf-brand p { max-width: none; }
+  .cxf-news { max-width: none; }
+  .cxf-h { font-size: 1.35rem; margin: 6px 0 18px; }
+  .cxf-list { gap: 10px; } .cxf-list li a { font-size: 1.05rem; padding: 4px 0; }
+  .cxf-contact li { font-size: 1rem; }
+  .cxf-btn { display: block; text-align: center; }
+}
+/* theme sets a global fill on svg paths; the social icons follow the link colour */
+footer.cxf .cxf-social svg [fill="currentColor"], footer.cxf .cxf-social svg[fill="currentColor"] > * { fill: currentColor !important; }
+footer.cxf .cxf-social svg[fill="none"], footer.cxf .cxf-social svg[fill="none"] > [fill="none"] { fill: none !important; stroke: currentColor !important; }
+footer.cxf .cxf-social svg[fill="none"] > [fill="currentColor"] { fill: currentColor !important; }
+/* theme rule `svg:not(:root){color:#0768b5!important}` would turn currentColor blue inside the icons */
+footer.cxf .cxf-social svg { color: inherit !important; }

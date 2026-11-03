@@ -50,3 +50,36 @@ body.cx-legacy .elementor-post__card { transition: transform .55s cubic-bezier(.
    although images are already loaded (lazy-loading is undone in the mirror). They only cost frames. */
 body.cx-legacy .swiper-lazy-preloader, body.cx-legacy .swiper-lazy-preloader::after { animation: none !important; }
 body.cx-legacy .swiper-lazy-preloader { display: none !important; }
+
+/* ───────── Phone usability (≤767px): layout nudges only — no colours, fonts or copy change ───────── */
+@media (max-width: 767px) {
+  /* Home hero statistics ring: each number sits inside its own coloured band (45° line, mid-band),
+     and the centre photo is sized to the hollow so it never covers the numbers. */
+  #cx-legacy-root .image_rightinner .counter_box {
+    width: 70px !important; right: auto !important; bottom: auto !important; margin: 0 !important; transform: none !important; text-align: center;
+  }
+  #cx-legacy-root .image_rightinner .counter_box .elementor-counter-number-wrapper { font-size: 20px !important; line-height: 1.05 !important; justify-content: center !important; flex-wrap: nowrap !important; white-space: nowrap; }
+  #cx-legacy-root .image_rightinner .counter_box .elementor-counter-title { font-size: 10px !important; line-height: 1.2 !important; margin: 1px 0 0 !important; text-align: center !important; white-space: nowrap; }
+  #cx-legacy-root .elementor-element-53c356d { left: 31% !important; top: 41% !important; }   /* 97% Retention — black band  */
+  #cx-legacy-root .elementor-element-5cfcd8d0 { left: 26.7% !important; top: 41% !important; }  /* 50% Cost Savings — blue band */
+  #cx-legacy-root .elementor-element-3d9a4216 { left: 31% !important; top: 37% !important; }  /* 30K+ Placement — sky band   */
+  #cx-legacy-root .elementor-element-18bb6ab  { left: 32% !important; top: 46% !important; }  /* 30+ Countries — red band    */
+  #cx-legacy-root .elementor-element-499f5f30 {
+    width: 136px !important; max-width: 136px !important; left: 50% !important; top: 50% !important; right: auto !important; bottom: auto !important;
+    transform: translate(-50%, -50%) !important; z-index: 0 !important;
+  }
+  #cx-legacy-root .image_rightinner .counter_box { z-index: 2 !important; }
+  #cx-legacy-root .image_rightinner .counter_box .elementor-widget-container { padding: 0 !important; margin: 0 !important; }
+
+  /* Featured blogs: the two category buttons sit side by side, centred, instead of staggered */
+  #cx-legacy-root .elementor-element-1c8715f { flex-direction: row !important; flex-wrap: wrap; justify-content: center !important; align-items: center !important; gap: 12px !important; }
+  #cx-legacy-root .elementor-element-9373795, #cx-legacy-root .elementor-element-d559039 { width: auto !important; flex: 0 0 auto !important; padding: 0 !important; }
+  #cx-legacy-root .elementor-element-203518a, #cx-legacy-root .elementor-element-9670456 { text-align: center !important; }
+  #cx-legacy-root .elementor-element-0cefd56 .elementor-spacer-inner { height: 24px !important; }
+}
+
+/* Back-to-top button (Astra): the theme's arrow was blue on blue. Round, white arrow, clear of the thumb zone. */
+#ast-scroll-top { width: 44px !important; height: 44px !important; line-height: 44px !important; border-radius: 50% !important; right: 16px !important; bottom: 22px !important; background: #0768b5 !important; box-shadow: 0 8px 22px rgba(7, 104, 181, .35); font-size: 15px !important; }
+#ast-scroll-top .ast-icon { display: flex !important; align-items: center; justify-content: center; width: 100%; height: 100%; }
+#ast-scroll-top .ast-icon.icon-arrow svg { width: 18px !important; height: 12px !important; margin: 0 !important; transform: rotate(180deg) !important; vertical-align: middle; }
+#ast-scroll-top svg, #ast-scroll-top svg path { fill: #fff !important; }
