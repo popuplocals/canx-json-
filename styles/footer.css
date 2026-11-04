@@ -63,7 +63,10 @@ footer.cxf .cxf-btn, footer.cxf .cxf-btn:hover { color: #fff; }
   .cxf-h { font-size: 1.35rem; margin: 6px 0 18px; }
   .cxf-list { gap: 10px; } .cxf-list li a { font-size: 1.05rem; padding: 4px 0; }
   .cxf-contact li { font-size: 1rem; }
-  .cxf-btn { display: block; text-align: center; }
+  .cxf-band { text-align: left; }
+  .cxf-badges { justify-content: flex-start; flex-wrap: nowrap; gap: 8px; }
+  .cxf-badges span { flex: 1 1 0; min-width: 0; height: 46px; padding: 6px 6px; }
+  .cxf-badges img { height: 34px; max-width: 100%; }
 }
 /* theme sets a global fill on svg paths; the social icons follow the link colour */
 footer.cxf .cxf-social svg [fill="currentColor"], footer.cxf .cxf-social svg[fill="currentColor"] > * { fill: currentColor !important; }
@@ -71,3 +74,6 @@ footer.cxf .cxf-social svg[fill="none"], footer.cxf .cxf-social svg[fill="none"]
 footer.cxf .cxf-social svg[fill="none"] > [fill="currentColor"] { fill: currentColor !important; }
 /* theme rule `svg:not(:root){color:#0768b5!important}` would turn currentColor blue inside the icons */
 footer.cxf .cxf-social svg { color: inherit !important; }
+/* every footer icon (contact pins, social) keeps the footer's colour, not the theme's svg colour */
+footer.cxf svg { color: inherit !important; }
+footer.cxf .cxf-contact svg { stroke: currentColor; }

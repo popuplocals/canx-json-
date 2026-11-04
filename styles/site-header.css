@@ -253,7 +253,7 @@ header.hd.hd { position: fixed !important; top: 0 !important; left: 0; right: 0;
   .hs-field { padding: 14px 16px; } .hs-field input { font-size: 16px; }
   .hs-foot { display: none; }
 }
-@media (max-width: 360px) { .hd .hd-icon { display: none; } }
+@media (max-width: 400px) { .hd .hd-icon { display: none; } }
 
 /* the mirrored theme recolours any button[aria-expanded="true"] (white text, grey pill) — keep ours */
 .hd .hd-link[aria-expanded], .hd-mobile .hd-m-head[aria-expanded], .hd .hd-burger[aria-expanded] {
@@ -263,3 +263,21 @@ header.hd.hd { position: fixed !important; top: 0 !important; left: 0; right: 0;
 .hd .hd-link[aria-expanded="false"] { color: var(--ink) !important; background: transparent !important; }
 .hd .hd-link[aria-expanded="true"], .hd .hd-link[aria-expanded="false"]:hover { color: var(--blue) !important; background: rgba(7, 104, 181, .09) !important; }
 .hd .hd-burger[aria-expanded] { background: transparent !important; color: var(--ink) !important; }
+
+/* The mirrored theme forces `svg:not(:root){color:#0768b5!important}`; our icons use currentColor.
+   Keep every icon in the shell on its own colour (white on blue buttons, ink on light). */
+header.hd svg, div.hd-mobile svg, div.hs svg { color: inherit !important; }
+
+/* phone: logo left, actions flush right (the hidden desktop nav must not eat the auto margin) */
+@media (max-width: 980px) { .hd .hd-actions { margin-left: auto !important; } .hd-bar-in { gap: 12px; } }
+
+/* search entry inside the mobile sheet */
+.hd-mobile .hd-m-search {
+  display: flex; align-items: center; gap: 12px; width: 100%; margin: 2px 0 12px; padding: 14px 16px; border-radius: 14px;
+  background: #fff; border: 1px solid var(--line); color: var(--muted); font-size: 15px; text-align: left;
+  box-shadow: 0 6px 18px rgba(7, 104, 181, .08); opacity: 0; transform: translateY(26px); transition: opacity .6s var(--ease), transform .7s var(--ease); transition-delay: .1s;
+}
+.hd-mobile[data-open="1"] .hd-m-search { opacity: 1; transform: none; }
+.hd-mobile .hd-m-search svg { color: var(--blue) !important; flex-shrink: 0; }
+.hd-mobile .hd-m-search span { flex: 1; }
+.hd-mobile .hd-m-search:active { transform: scale(.98); }

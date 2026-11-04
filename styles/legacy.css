@@ -65,7 +65,7 @@ body.cx-legacy .swiper-lazy-preloader { display: none !important; }
   #cx-legacy-root .elementor-element-3d9a4216 { left: 31% !important; top: 37% !important; }  /* 30K+ Placement — sky band   */
   #cx-legacy-root .elementor-element-18bb6ab  { left: 32% !important; top: 46% !important; }  /* 30+ Countries — red band    */
   #cx-legacy-root .elementor-element-499f5f30 {
-    width: 136px !important; max-width: 136px !important; left: 50% !important; top: 50% !important; right: auto !important; bottom: auto !important;
+    width: 52% !important; max-width: 52% !important; left: 50% !important; top: 50% !important; right: auto !important; bottom: auto !important;
     transform: translate(-50%, -50%) !important; z-index: 0 !important;
   }
   #cx-legacy-root .image_rightinner .counter_box { z-index: 2 !important; }

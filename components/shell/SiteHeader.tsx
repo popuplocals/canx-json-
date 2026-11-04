@@ -150,7 +150,7 @@ export default function SiteHeader() {
 
       {/* ── mobile menu ── */}
       <div id="mobile-menu" className="hd-mobile" data-open={mobile ? "1" : "0"} aria-hidden={!mobile}>
-        <MobileMenu close={() => setMobile(false)} pathname={pathname} />
+        <MobileMenu close={() => setMobile(false)} pathname={pathname} onSearch={() => { setMobile(false); setSearch(true); }} />
       </div>
 
       <HeaderSearch open={search} onClose={() => setSearch(false)} />
@@ -288,7 +288,7 @@ function CompanyPanel() {
 
 /* ───────────────────────── mobile ───────────────────────── */
 
-function MobileMenu({ close, pathname }: { close: () => void; pathname: string }) {
+function MobileMenu({ close, pathname, onSearch }: { close: () => void; pathname: string; onSearch: () => void }) {
   const [sec, setSec] = useState<GroupKey | null>(null);
   const groups: { key: GroupKey; label: string; links: NavLeaf[] }[] = [
     { key: "recruitment", label: "Recruitment", links: RECRUITMENT.flatMap((t) => [{ t: t.t, h: t.h }, ...(t.kids ?? []).map((k) => ({ t: `— ${k.t}`, h: k.h }))]) },
@@ -299,6 +299,10 @@ function MobileMenu({ close, pathname }: { close: () => void; pathname: string }
   ];
   return (
     <nav className="hd-mobile-in" aria-label="Mobile">
+      <button type="button" className="hd-m-search" onClick={onSearch} aria-label="Search the site">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+        <span>Search services, programs and articles</span>
+      </button>
       {groups.map((g, n) => (
         <div key={g.key} className="hd-m-sec" data-open={sec === g.key ? "1" : "0"} style={{ ["--i" as string]: n }}>
           <button type="button" className="hd-m-head" aria-expanded={sec === g.key} onClick={() => setSec(sec === g.key ? null : g.key)}>
