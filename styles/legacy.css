@@ -83,3 +83,6 @@ body.cx-legacy .swiper-lazy-preloader { display: none !important; }
 #ast-scroll-top .ast-icon { display: flex !important; align-items: center; justify-content: center; width: 100%; height: 100%; }
 #ast-scroll-top .ast-icon.icon-arrow svg { width: 18px !important; height: 12px !important; margin: 0 !important; transform: rotate(180deg) !important; vertical-align: middle; }
 #ast-scroll-top svg, #ast-scroll-top svg path { fill: #fff !important; }
+
+/* Owner rule: no black "Get Started" button after every paragraph — every second one is hidden (legacy_fixes.py) */
+#cx-legacy-root .cx-cta-skip { display: none !important; }

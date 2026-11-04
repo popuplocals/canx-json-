@@ -77,22 +77,7 @@ export default function SiteHeader() {
 
   return (
     <>
-      <header ref={headerRef} className="hd" data-scrolled={scrolled ? "1" : "0"} data-open={open ?? ""}>
-        {/* ── info strip: folds away once the page is scrolled ── */}
-        <div className="hd-strip" aria-hidden={scrolled}>
-          <div className="hd-wrap hd-strip-in">
-            <a href={SITE_CONTACT.phoneHref} className="hd-strip-call">
-              <span className="hd-dot" aria-hidden><i /><i /></span>
-              <b>Call us</b><span>{SITE_CONTACT.phone}</span>
-            </a>
-            <span className="hd-strip-note">
-              <a href={`mailto:${SITE_CONTACT.email}`}>{SITE_CONTACT.email}</a>
-              <em>/</em>Toll-free <a href={SITE_CONTACT.tollFreeHref}>{SITE_CONTACT.tollFree}</a>
-              <em>/</em>RCIC-regulated · Top Rated Recruitment &amp; Immigration Firm
-            </span>
-          </div>
-        </div>
-
+      <header ref={headerRef} className="hd hd-nostrip" data-scrolled={scrolled ? "1" : "0"} data-open={open ?? ""}>
         {/* ── bar → capsule ── */}
         <div className="hd-barwrap">
           <div className="hd-bar">
