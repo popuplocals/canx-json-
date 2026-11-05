@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Can X Global — website
 
-## Getting Started
+Next.js 16 rebuild of [canxglobal.com](https://canxglobal.com) (Can X Global Solutions Inc., recruitment and immigration, Surrey BC).
 
-First, run the development server:
+- `app/` — routes. The home page and every service page are mirrored 1:1 from the live WordPress/Elementor site (`content/legacy/`), rendered inside the Next.js shell with a native header, footer, search and motion layer.
+- `app/immigration-blogs/` and `content/posts/` — native blog (category pages, post layout, table of contents, FAQ).
+- `components/shell/` — site header (mega menus, search, mobile sheet) and footer.
+- `components/legacy/` — renders the mirrored Elementor pages and keeps their runtime working across client-side navigation.
+- `public/wp-content/`, `public/wp-includes/` — vendored WordPress assets. Not linted.
+- `redirects.json` — legacy URL redirects, loaded by `next.config.ts`.
+
+## Develop
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Check and build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+npm start
+```
 
-## Learn More
+The build prerenders every page (about 620 static routes).
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Vercel project `canx-json` builds every push; pushes to `master` go to production. Preview hosts (`*.vercel.app`) send `X-Robots-Tag: noindex` so they never compete with canxglobal.com in search.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Known dependency: the mirrored pages' Elementor runtime still loads its widget chunk scripts (counter, toggle, text-editor, …) from `canxglobal.com/wp-content/plugins/elementor/assets/js/chunks/`. If the WordPress host is retired, copy that folder into `public/wp-content/plugins/elementor/assets/js/chunks/` and point `elementorFrontendConfig.urls.assets` in `content/legacy/_shared/` at the local path.

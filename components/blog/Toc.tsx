@@ -25,7 +25,7 @@ export default function Toc({ items }: { items: { id: string; text: string }[] }
       <ol>
         {items.map((i) => (
           <li key={i.id} className={active === i.id ? "on" : undefined}>
-            <a href={`#${i.id}`} onClick={(e) => { e.preventDefault(); const el = document.getElementById(i.id); if (!el) return; const y = el.getBoundingClientRect().top + window.scrollY - 96; window.__lenis ? window.__lenis.scrollTo(y, { duration: 1.1 }) : window.scrollTo({ top: y, behavior: "smooth" }); }}>
+            <a href={`#${i.id}`} onClick={(e) => { e.preventDefault(); const el = document.getElementById(i.id); if (!el) return; const y = el.getBoundingClientRect().top + window.scrollY - 96; if (window.__lenis) window.__lenis.scrollTo(y, { duration: 1.1 }); else window.scrollTo({ top: y, behavior: "smooth" }); }}>
               {i.text}
             </a>
           </li>

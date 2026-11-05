@@ -16,7 +16,6 @@ export default function LegacyPage({ page }: { page: LegacyPageData }) {
       {/* Astra/Elementor CSS targets body.<class>; apply before paint */}
       <script dangerouslySetInnerHTML={{ __html: `document.body.className+=" ${bodyClass} cx-legacy";window.__cxLegacyBooted=true;window.__cxLegacyFull=location.pathname;` }} />
       {page.stylesheets.map((href) => (
-        // eslint-disable-next-line @next/next/no-css-tags
         <link key={href} rel="stylesheet" href={href} precedence="legacy" />
       ))}
       {page.inlineStyles.map((css, i) => (
@@ -25,6 +24,8 @@ export default function LegacyPage({ page }: { page: LegacyPageData }) {
       <div id="cx-legacy-root" dangerouslySetInnerHTML={{ __html: page.body }} suppressHydrationWarning />
       {page.scripts.map((s, i) =>
         s.src ? (
+          // Deliberately synchronous: jQuery → Elementor → widget handlers must execute in order.
+          // eslint-disable-next-line @next/next/no-sync-scripts
           <script key={i} src={s.src} />
         ) : s.inline ? (
           <script key={i} id={s.id ?? undefined} dangerouslySetInnerHTML={{ __html: page.inlineScripts[s.inline] ?? "" }} />
