@@ -17,20 +17,20 @@ export const revealVariants: Variants = {
  */
 function useReveal(ref: RefObject<HTMLElement | null>, once = true) {
   const inView = useInView(ref, { once, amount: "some", margin: `0px 0px -${MARGIN}px 0px` });
-  const [shown, setShown] = useState(false);
-  useEffect(() => { if (inView) setShown(true); else if (!once) setShown(false); }, [inView, once]);
+  const [geomShown, setGeomShown] = useState(false);
   useEffect(() => {
     const check = () => {
       const el = ref.current; if (!el) return;
       const r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight - MARGIN && r.bottom > 0) setShown(true);
+      const visible = r.top < window.innerHeight - MARGIN && r.bottom > 0;
+      if (visible) setGeomShown(true); else if (!once) setGeomShown(false);
     };
     const t = setTimeout(check, 700);
     window.addEventListener("scroll", check, { passive: true });
     window.addEventListener("resize", check);
     return () => { clearTimeout(t); window.removeEventListener("scroll", check); window.removeEventListener("resize", check); };
-  }, [ref]);
-  return shown;
+  }, [ref, once]);
+  return inView || geomShown;
 }
 
 /** Fade + rise + un-blur when the element scrolls into view. */

@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored WordPress/Elementor runtime mirrored from the live site — not our code.
+    "public/**",
+    "content/**",
   ]),
 ]);
 

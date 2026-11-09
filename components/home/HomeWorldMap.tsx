@@ -9,7 +9,10 @@ import "../../styles/home-map.css";
 export default function HomeWorldMap() {
   const [slot, setSlot] = useState<HTMLElement | null>(null);
   useEffect(() => {
+    // The slot is part of the mirrored WordPress markup, so it only exists after hydration;
+    // a portal target cannot be derived during render without a hydration mismatch.
     const el = document.getElementById("cx-worldmap-slot");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSlot(el);
     if (!el) return;
     // the pulsing rings only run while the map is actually on screen
