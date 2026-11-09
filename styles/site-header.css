@@ -295,3 +295,34 @@ header.hd svg, div.hd-mobile svg, div.hs svg { color: inherit !important; }
 }
 
 @media (max-width: 380px) { .hd .hd-icon { display: none; } .hd .hd-cta { padding: 9px 11px; font-size: 12px; } .hd-logo img { height: 32px; } }
+
+/* ── Company mega panel: the live canxglobal.com panel, markup + CSS ported verbatim ── */
+.hd .hd-mega-co { width: min(1260px, calc(100vw - 40px)); }
+.hd .hd-mega-co .hd-mega-box { border-radius: 16px; background: rgba(255,255,255,.97); padding: 0; }
+.hd .co-flex { display: flex; align-items: stretch; }
+.hd .co-left { flex: 1; padding: 22px 24px; background: #fff; min-width: 0; }
+.hd .co-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+.hd .co-card { display: flex; flex-direction: column; align-items: center; gap: 0; padding: 16px; border-radius: 6px; border: 1px solid #EFF0F3; text-decoration: none; color: #000; text-align: center; transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+.hd .co-card:hover { border-color: #b8d4ef; box-shadow: 0 6px 20px rgba(7,104,181,.10); transform: translateY(-2px); }
+.hd .co-card-icon { font-size: 20px; color: #0768B5; margin-bottom: 6px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #E8F4FF; border-radius: 8px; }
+.hd .co-card-name { font-size: 15px; font-weight: 600; color: #000; line-height: 1.35; margin: 0 0 5px; display: flex; justify-content: center; align-items: center; }
+.hd .co-card-desc { font-size: 12.5px; font-weight: 400; color: #555; line-height: 1.5; }
+.hd .co-bottom { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.hd .co-connect { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(90deg, #39BBF9 0%, #1967B0 100%); color: #fff !important; font-size: 18px; font-weight: 500; line-height: 26px; padding: 15px 24px; border-radius: 8px; border: 1px solid #39BBF9; text-decoration: none; transition: opacity .2s, transform .18s; }
+.hd .co-connect:hover { opacity: .92; transform: translateY(-1px); }
+.hd .gbadge { display: flex; align-items: center; gap: 20px; padding: 6px 10px; background: #F6F6F8; border: 1px solid #E7E8EC; border-radius: 8px; }
+.hd .gbadge img { width: 90px; height: auto; display: block; }
+.hd .gbadge-inner { display: flex; flex-direction: column; border-left: 1px solid rgba(0,0,0,.5); padding-left: 20px; }
+.hd .gbadge-row { display: flex; align-items: center; gap: 10px; }
+.hd .gbadge-r { font-size: 12px; font-weight: 400; color: #000; }
+.hd .gbadge-stars { font-size: 12px; color: #f59e0b; }
+.hd .gbadge-v { font-size: 12px; font-weight: 400; color: #000; }
+.hd .co-right { width: 35%; flex-shrink: 0; align-self: stretch; padding: 26px 22px 24px 24px; background: linear-gradient(155deg, #D5E9FF 0%, #B8D5F5 100%); display: flex; flex-direction: column; align-items: flex-start; }
+.hd .affil-title { font-size: 17px; font-weight: 700; color: #0A2F5E; width: 100%; letter-spacing: -.01em; margin-bottom: 14px; }
+.hd .affil-lower { display: flex; flex-direction: column; flex: 1; width: 100%; justify-content: space-between; gap: 16px; }
+.hd .affil-logo-card { background: rgba(255,255,255,.72); border-radius: 12px; padding: 14px 12px; border: 1px solid rgba(255,255,255,.92); box-shadow: 0 2px 16px rgba(7,104,181,.10); }
+.hd .affil-logo-card img { width: 100%; height: auto; display: block; }
+.hd .affil-btns { display: flex; gap: 10px; width: 100%; }
+.hd .affil-btn { flex: 1; display: block; text-align: center; background: linear-gradient(135deg, #1E75C8 0%, #0D4D8E 100%); color: #fff !important; font-size: 12px; font-weight: 600; line-height: 1.35; padding: 12px 8px; border-radius: 40px; border: none; text-decoration: none; box-shadow: 0 4px 14px rgba(7,104,181,.32); transition: transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .26s, background .26s; }
+.hd .affil-btn:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 10px 26px rgba(7,104,181,.46); background: linear-gradient(135deg, #2E85DA 0%, #1460AA 100%); }
+@media (max-width: 1200px) { .hd .co-grid { grid-template-columns: repeat(2, 1fr); } .hd .co-right { width: 38%; } }

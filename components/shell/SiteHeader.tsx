@@ -126,7 +126,7 @@ export default function SiteHeader() {
             <Mega id="immigration" open={open === "immigration"}><TabbedPanel tabs={IMMIGRATION} cta={{ t: "Book an immigration consultation", h: "/get-started/" }} /></Mega>
             <Mega id="resources" open={open === "resources"} narrow><ResourcesPanel /></Mega>
             <Mega id="blogs" open={open === "blogs"}><BlogsPanel /></Mega>
-            <Mega id="company" open={open === "company"}><CompanyPanel /></Mega>
+            <Mega id="company" open={open === "company"} wide><CompanyPanel /></Mega>
           </div>
         </div>
       </header>
@@ -145,9 +145,9 @@ export default function SiteHeader() {
 
 /* ───────────────────────── panels ───────────────────────── */
 
-function Mega({ id, open, narrow, children }: { id: string; open: boolean; narrow?: boolean; children: React.ReactNode }) {
+function Mega({ id, open, narrow, wide, children }: { id: string; open: boolean; narrow?: boolean; wide?: boolean; children: React.ReactNode }) {
   return (
-    <div id={`mega-${id}`} className={`hd-mega${narrow ? " hd-mega-narrow" : ""}`} data-open={open ? "1" : "0"} aria-label={id}>
+    <div id={`mega-${id}`} className={`hd-mega${narrow ? " hd-mega-narrow" : ""}${wide ? " hd-mega-co" : ""}`} data-open={open ? "1" : "0"} aria-label={id}>
       <div className="hd-mega-box">{children}</div>
     </div>
   );
@@ -245,28 +245,40 @@ function BlogsPanel() {
 }
 
 function CompanyPanel() {
+  /* 1:1 markup of the live Company mega-menu (icon cards, Let's Connect + Google badge, affiliations column) */
   return (
-    <div className="hd-co">
-      <div className="hd-co-grid">
-        {COMPANY.map((c) => (
-          <Link key={c.h} href={c.h} className="hd-co-item">
-            <span className="hd-co-ico" aria-hidden>{c.icon}</span>
-            <span><span className="hd-card-t">{c.t}</span><span className="hd-card-d">{c.d}</span></span>
-          </Link>
-        ))}
+    <div className="co-flex">
+      <div className="co-left">
+        <div className="co-grid">
+          {COMPANY.map((c) => (
+            <Link key={c.h} href={c.h} className="co-card">
+              <div className="co-card-icon" aria-hidden>{c.icon}</div>
+              <div className="co-card-name">{c.t}</div>
+              <div className="co-card-desc">{c.d}</div>
+            </Link>
+          ))}
+        </div>
+        <div className="co-bottom">
+          <Link href="/get-started/" className="co-connect">Let&apos;s Connect →</Link>
+          <div className="gbadge">
+            <img src="/wp-content/uploads/2025/06/WhatsApp-Image-2025-05-31-at-17.56.43_1e8f9570-1.png" alt="Google" loading="lazy" width={90} height={23} />
+            <div className="gbadge-inner">
+              <div className="gbadge-row"><div className="gbadge-r"><strong>4.8</strong></div><div className="gbadge-stars" aria-label="5 stars">★★★★★</div></div>
+              <div className="gbadge-v">From 531+ reviews</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <aside className="hd-co-side">
-        <div className="hd-rating">
-          <img src="/wp-content/uploads/2025/06/WhatsApp-Image-2025-05-31-at-17.56.43_1e8f9570-1.png.webp" alt="Google reviews" width={92} height={24} loading="lazy" />
-          <b>4.8</b><span className="hd-stars" aria-label="5 stars">★★★★★</span><small>From 531+ reviews</small>
+      <div className="co-right">
+        <div className="affil-title">Proudly Affiliated With</div>
+        <div className="affil-lower">
+          <div className="affil-logo-card"><img src="/wp-content/uploads/2025/06/Home-Page-Canx-global-1.png" alt="Affiliations" loading="lazy" /></div>
+          <div className="affil-btns">
+            <Link href="/get-started/" className="affil-btn">Top Rated Immigration Firm</Link>
+            <Link href="/get-started/" className="affil-btn">Top Rated Recruitment Firm</Link>
+          </div>
         </div>
-        <img className="hd-affil" src="/wp-content/uploads/2025/06/Home-Page-Canx-global-1.png" alt="Can X Global affiliations" loading="lazy" />
-        <div className="hd-chips">
-          <Link href="/get-started/">Top Rated Immigration Firm</Link>
-          <Link href="/get-started/">Top Rated Recruitment Firm</Link>
-        </div>
-        <Link href="/get-started/" className="hd-cta hd-cta-block"><span>Let&apos;s Connect</span><span aria-hidden>→</span></Link>
-      </aside>
+      </div>
     </div>
   );
 }
