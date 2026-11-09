@@ -1,0 +1,60 @@
+/* Post-template block styles collected from the live canxglobal.com posts (older template variants use
+   a #premium-blog-content wrapper; the id is kept in the archive). rem values here are relative to the
+   live 18px root, so the article wrapper sets font-size:18px to keep them identical. */
+.table-container { width: 100%; overflow-x: auto; }
+.table-wrapper { min-width: 700px; border-collapse: collapse; }
+.table-wrapper th, .table-wrapper td { padding: 8px; border: 1px solid rgb(221, 221, 221); text-align: left; }
+#premium-blog-content .lead-paragraph { font-size: 22.5px; color: var(--text-heading); font-weight: 400; line-height: 1.8; margin-bottom: 45px; }
+#premium-blog-content .drop-cap::first-letter { float: left; font-size: 81px; line-height: 0.8; font-weight: 700; margin-right: 0.15em; margin-top: 0.05em; color: var(--brand-dark); font-family: var(--font-poppins), Poppins, sans-serif; background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-color: ; background-clip: text; -webkit-text-fill-color: transparent; }
+#premium-blog-content .styled-list { margin-bottom: 32.4px; padding-left: 27px; }
+#premium-blog-content .styled-list li { margin-bottom: 14.4px; font-weight: 400; color: var(--text-main); line-height: 1.6; }
+#premium-blog-content .styled-list li strong { color: var(--text-heading); font-weight: 600; }
+#premium-blog-content .stats-callout { background: linear-gradient(to right, rgba(57, 187, 249, 0.05), rgba(25, 103, 176, 0.02)); border-left: 4px solid var(--brand-light); border-radius: 0px 12px 12px 0px; padding: 36px 45px; margin: 45px 0px; box-shadow: rgba(0, 0, 0, 0.02) 0px 4px 15px; }
+#premium-blog-content .stats-callout p { margin-bottom: 0px; font-family: var(--font-poppins), Poppins, sans-serif; font-size: 20.7px; color: var(--text-heading); }
+#premium-blog-content .stats-callout ul { list-style: none; padding: 0px; margin: 18px 0px 0px; }
+#premium-blog-content .stats-callout li { margin-bottom: 14.4px; display: flex; align-items: center; font-weight: 500; }
+#premium-blog-content .stats-callout li::before { content: "—"; color: var(--brand-light); font-weight: 700; margin-right: 10px; }
+#premium-blog-content .eligibility-item { margin-bottom: 27px; background: rgb(255, 255, 255); padding: 27px; border-radius: 12px; border: 1px solid rgba(0, 0, 0, 0.05); box-shadow: rgba(0, 0, 0, 0.02) 0px 4px 10px; }
+#premium-blog-content .eligibility-title { font-family: var(--font-poppins), Poppins, sans-serif; font-weight: 600; color: var(--brand-dark); display: block; margin-bottom: 9px; font-size: 20.7px; }
+#premium-blog-content .action-steps { display: flex; flex-direction: column; gap: 27px; margin-top: 36px; margin-bottom: 36px; }
+#premium-blog-content .step-card { display: flex; align-items: flex-start; gap: 27px; background: rgb(255, 255, 255); padding: 27px; border-radius: 12px; border: 1px solid rgba(0, 0, 0, 0.05); transition: transform 0.3s, box-shadow 0.3s; }
+#premium-blog-content .step-card:hover { transform: translateY(-3px); box-shadow: rgba(25, 103, 176, 0.08) 0px 10px 25px; border-color: rgba(57, 187, 249, 0.3); }
+#premium-blog-content .step-number { flex-shrink: 0; width: 45px; height: 45px; background: var(--brand-gradient); color: rgb(255, 255, 255); font-family: var(--font-poppins), Poppins, sans-serif; font-weight: 700; font-size: 21.6px; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: rgba(57, 187, 249, 0.3) 0px 4px 10px; }
+#premium-blog-content .step-content p { margin: 0px; font-size: 18.9px; }
+@media (max-width: 768px) { #premium-blog-content .drop-cap::first-letter { font-size: 68.4px; } }
+@media (max-width: 768px) { #premium-blog-content .stats-callout { padding: 27px; } }
+@media (max-width: 768px) { #premium-blog-content .step-card { flex-direction: column; gap: 18px; } }
+.related-links { background: rgba(25, 103, 176, 0.04); border: 1px solid rgba(25, 103, 176, 0.12); border-radius: 18px; padding: 24px 28px; margin: 54px 0px; }
+.related-links h3 { color: var(--brand-dark) !important; margin-top: 0px !important; margin-bottom: 14px !important; font-size: 20.7px !important; }
+.related-links ul { padding-left: 20px; margin-bottom: 0px; }
+.related-links li { margin-bottom: 8px; }
+.related-links a { text-decoration: none; font-weight: 500; color: var(--brand-dark) !important; }
+.related-links a:hover { text-decoration: underline; color: var(--brand-light) !important; }
+.lead-paragraph { font-size: 22.5px; color: var(--text-heading); margin-bottom: 45px; }
+.drop-cap::first-letter { float: left; font-size: 81px; line-height: 0.8; font-weight: 700; margin-right: 0.15em; color: var(--brand-dark); }
+.action-steps { display: flex; flex-direction: column; gap: 27px; margin: 45px 0px; }
+.step-card { display: flex; align-items: flex-start; gap: 27px; background: rgb(255, 255, 255); padding: 27px; border-radius: 12px; border: 1px solid rgba(0, 0, 0, 0.05); box-shadow: rgba(0, 0, 0, 0.02) 0px 4px 10px; }
+.step-number { flex-shrink: 0; width: 45px; height: 45px; background: var(--brand-gradient); color: rgb(255, 255, 255); font-weight: 700; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+@media (max-width: 768px) { .step-card { flex-direction: column; } }
+.faq-details { margin-bottom: 27px; background: rgb(255, 255, 255); border-radius: 12px; border: 1px solid rgba(0, 0, 0, 0.05); }
+.faq-summary { padding: 27px; font-family: var(--font-poppins), Poppins, sans-serif; font-weight: 600; color: var(--brand-dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+.faq-icon::after { content: "▾"; color: var(--brand-light); font-size: 21.6px; }
+.faq-details[open] .faq-icon::after { content: "▴"; }
+.faq-content { padding: 0px 27px 27px; color: var(--text-main); }
+#premium-blog-content .table-container { width: 100%; overflow-x: auto; margin: 45px 0px; border-radius: 12px; box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 20px; border: 1px solid rgba(0, 0, 0, 0.05); }
+#premium-blog-content .alert-callout { background: rgba(255, 69, 58, 0.05); border-left: 4px solid rgb(255, 69, 58); }
+#premium-blog-content .alert-title { font-family: var(--font-poppins), Poppins, sans-serif; font-size: 22.5px; font-weight: 700; color: rgb(211, 47, 47); display: flex; align-items: center; margin-bottom: 14.4px; }
+#premium-blog-content .alert-text { font-size: 18.9px; color: var(--text-heading); margin: 0px; }
+#premium-blog-content .stats-callout li { margin-bottom: 14.4px; display: flex; align-items: flex-start; font-weight: 500; line-height: 1.5; }
+#premium-blog-content .alert-callout { background: rgba(255, 69, 58, 0.05); border-left: 4px solid rgb(255, 69, 58); padding: 27px; border-radius: 0px 12px 12px 0px; margin: 45px 0px; }
+#premium-blog-content .faq-details { margin-bottom: 27px; background: rgb(255, 255, 255); border-radius: 12px; border: 1px solid rgba(0, 0, 0, 0.05); box-shadow: rgba(0, 0, 0, 0.02) 0px 4px 10px; transition: box-shadow 0.3s; }
+#premium-blog-content .faq-details:hover { box-shadow: rgba(25, 103, 176, 0.05) 0px 6px 15px; }
+#premium-blog-content .faq-summary { padding: 27px; font-family: var(--font-poppins), Poppins, sans-serif; font-weight: 600; color: var(--brand-dark); font-size: 20.7px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; user-select: none; margin: 0px; }
+#premium-blog-content .faq-summary::-webkit-details-marker { display: none; }
+#premium-blog-content .faq-summary:focus { outline: none; }
+#premium-blog-content .faq-icon { flex-shrink: 0; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; color: var(--brand-light); transition: transform 0.3s; margin-left: 18px; }
+#premium-blog-content .faq-details[open] .faq-icon { transform: rotate(180deg); }
+#premium-blog-content .faq-content { padding: 0px 27px 27px; animation: 0.4s ease-out 0s 1 normal none running faq-fade-in; color: var(--text-main); }
+.related-links { background: rgba(25, 103, 176, 0.04); border: 1px solid rgba(25, 103, 176, 0.12); border-radius: 18px; padding: 24px 28px; margin: 36px 0px; }
+.related-links p { font-weight: 600; color: var(--brand-dark) !important; margin-top: 0px !important; margin-bottom: 14px !important; font-size: 20.7px !important; }
+@media (max-width: 768px) { .related-links { padding: 18px 20px; border-radius: 16px; } }

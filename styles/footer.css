@@ -92,3 +92,20 @@ footer.cxf .cxf-contact svg { stroke: currentColor; }
   .cxf-badges span { flex: 0 0 calc((100% - 20px) / 3); height: 58px; padding: 8px 10px; }
   .cxf-badges img { height: auto; max-height: 40px; max-width: 100%; }
 }
+
+/* ───────── Phone footer band + legal bar: centred layout (owner mockup) ───────── */
+@media (max-width: 640px) {
+  .cxf-band { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 26px; padding-top: 40px; padding-bottom: 36px; }
+  .cxf-tag { font-size: clamp(1.45rem, 6.4vw, 1.75rem); position: relative; padding-bottom: 18px; }
+  .cxf-tag::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 92px; height: 5px; border-radius: 999px; background: #39bbf9; transform: translateX(-50%); }
+  .cxf-badges { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; width: 100%; justify-content: stretch; }
+  .cxf-badges span { height: 86px; padding: 12px 14px; border-radius: 14px; box-shadow: 0 6px 18px rgba(0, 0, 0, .12); }
+  .cxf-badges span:nth-child(1), .cxf-badges span:nth-child(2) { grid-column: span 3; }
+  .cxf-badges span:nth-child(n + 3) { grid-column: span 2; }
+  .cxf-badges img { height: auto; max-height: 62px; max-width: 100%; }
+  .cxf-below { background: #0768b5; color: #fff; font-size: 1rem; }
+  .cxf-below .cxf-wrap { flex-direction: column; gap: 14px; padding-top: 26px; padding-bottom: 30px; border-top: 1px solid rgba(255, 255, 255, .35); }
+  .cxf-below a, footer.cxf .cxf-below a { color: #fff; }
+  .cxf-below nav { gap: 10px; font-size: .95rem; flex-wrap: nowrap; } .cxf-below nav a { white-space: nowrap; }
+  .cxf-below nav span { color: rgba(255, 255, 255, .55); }
+}
