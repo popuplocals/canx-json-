@@ -284,7 +284,8 @@ header.hd svg, div.hd-mobile svg, div.hs svg { color: inherit !important; }
 
 /* ── phone bar: logo left · search · menu flush right; the Get Started pill lives in the menu sheet ── */
 @media (max-width: 640px) {
-  .hd .hd-cta { display: none; }
+  .hd .hd-cta { display: inline-flex; padding: 9px 13px; font-size: 12.5px; gap: 6px; }
+  .hd .hd-cta svg { display: none; }
   .hd .hd-icon { display: grid; width: 42px; height: 42px; }
   .hd .hd-burger { width: 46px; height: 42px; }
   .hd-actions { gap: 8px; }
@@ -292,3 +293,5 @@ header.hd svg, div.hd-mobile svg, div.hs svg { color: inherit !important; }
   .hd[data-scrolled="1"] .hd-bar-in { padding: 0 8px 0 16px; }
   .hd-logo img { height: 36px; }
 }
+
+@media (max-width: 380px) { .hd .hd-icon { display: none; } .hd .hd-cta { padding: 9px 11px; font-size: 12px; } .hd-logo img { height: 32px; } }

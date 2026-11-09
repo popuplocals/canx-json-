@@ -77,3 +77,18 @@ footer.cxf .cxf-social svg { color: inherit !important; }
 /* every footer icon (contact pins, social) keeps the footer's colour, not the theme's svg colour */
 footer.cxf svg { color: inherit !important; }
 footer.cxf .cxf-contact svg { stroke: currentColor; }
+
+/* Tablet/landscape widths: the badge column was too narrow and stacked one logo per line.
+   Below desktop the band stacks: tagline first, then the badges in a neat left-aligned row that wraps. */
+@media (max-width: 1100px) {
+  .cxf-band { grid-template-columns: 1fr; gap: 22px; text-align: left; }
+  .cxf-badges { justify-content: flex-start; gap: 12px; }
+  .cxf-badges span { height: 70px; padding: 8px 12px; }
+  .cxf-badges img { height: 54px; max-width: 170px; }
+}
+@media (max-width: 640px) {
+  /* phones: badges wrap 3 + 2, equal boxes, nothing clipped */
+  .cxf-badges { flex-wrap: wrap; gap: 10px; justify-content: flex-start; }
+  .cxf-badges span { flex: 0 0 calc((100% - 20px) / 3); height: 58px; padding: 8px 10px; }
+  .cxf-badges img { height: auto; max-height: 40px; max-width: 100%; }
+}

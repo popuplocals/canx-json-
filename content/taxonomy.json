@@ -2,18 +2,20 @@
  "categories": {
   "36": {
    "name": "Immigration Blogs",
-   "slug": "immigration-blogs"
+   "slug": "immigration-blogs",
+   "count": 465
   },
   "37": {
    "name": "Recruitment Blog",
-   "slug": "recruitment-blogs"
+   "slug": "recruitment-blogs",
+   "count": 171
   }
  },
  "tags": {
   "52": {
    "name": "Canada",
    "slug": "canada",
-   "count": 59
+   "count": 79
   },
   "50": {
    "name": "Citizenship &amp; Settlement",
@@ -23,12 +25,12 @@
   "42": {
    "name": "Express Entry",
    "slug": "express-entry",
-   "count": 32
+   "count": 88
   },
   "44": {
    "name": "Family Sponsorship",
    "slug": "family-sponsorship",
-   "count": 78
+   "count": 85
   },
   "43": {
    "name": "Immigration &amp; AI",
@@ -38,32 +40,32 @@
   "45": {
    "name": "LMIA",
    "slug": "lmia",
-   "count": 47
+   "count": 51
   },
   "48": {
    "name": "Provincial Nominee Program",
    "slug": "provincial-nominee-program",
-   "count": 1
+   "count": 11
   },
   "51": {
    "name": "Refusals &amp; Reapplications",
    "slug": "refusals-reapplications",
-   "count": 40
+   "count": 41
   },
   "49": {
    "name": "Study Permit",
    "slug": "study-permit",
-   "count": 9
+   "count": 11
   },
   "47": {
    "name": "Super Visa &amp; Visitor Visa",
    "slug": "super-visa-visitor-visa",
-   "count": 5
+   "count": 7
   },
   "46": {
    "name": "Work Permit",
    "slug": "work-permit",
-   "count": 44
+   "count": 52
   }
  }
 }

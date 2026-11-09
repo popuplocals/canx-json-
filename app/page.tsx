@@ -13,6 +13,20 @@ import HomeWorldMap from "@/components/home/HomeWorldMap";
  * The earlier native redesign (components/home/*, styles/home.css, lib/home.ts) is no longer used
  * here; it stays in git history (commit 5539045 and earlier) if it is ever wanted again.
  */
+import logos from "@/content/home-trusted-logos.json";
+
+/* "Trusted by Businesses Big or Small": the live swiper strip becomes two slow marquee rows
+   (row 1 drifts left, row 2 drifts right, both pause on hover). Heading and logos are the live ones. */
+const LOGO_WIDGET = '<div class="elementor-element elementor-element-67027a8 ';
+function marquee(): string {
+  const half = Math.ceil(logos.length / 2);
+  const row = (items: typeof logos, dir: "l" | "r") => {
+    const cells = items.map((l) => `<span class="cxlm-cell"><img src="${l.src}" alt="${l.alt.replace(/"/g, "&quot;")}" loading="lazy" decoding="async" /></span>`).join("");
+    return `<div class="cxlm-row cxlm-${dir}"><div class="cxlm-track">${cells}${cells}</div></div>`;
+  };
+  return `<div class="cxlm" aria-label="Clients and partners">${row(logos.slice(0, half), "l")}${row(logos.slice(half), "r")}</div>`;
+}
+
 const MAP_SLOT = '<div id="cx-worldmap-slot" class="cxhm" data-paused="1"></div>';
 const BEFORE_BUTTON = '<div class="elementor-element elementor-element-c1138e5 ';
 
@@ -31,7 +45,9 @@ export const metadata: Metadata = {
 export default function Home() {
   if (!live) notFound();
   const i = live.body.indexOf(BEFORE_BUTTON);
-  const body = i === -1 ? live.body : live.body.slice(0, i) + MAP_SLOT + live.body.slice(i);
+  let body = i === -1 ? live.body : live.body.slice(0, i) + MAP_SLOT + live.body.slice(i);
+  const j = body.indexOf(LOGO_WIDGET);
+  if (j !== -1) body = body.slice(0, j) + marquee() + body.slice(j);
   return (
     <>
       <LegacyView page={{ ...live, body }} />

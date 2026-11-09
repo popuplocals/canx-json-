@@ -145,17 +145,7 @@ export default function LegacyMotion() {
       document.body.appendChild(bar);
       stops.push(scroll(animate(bar, { transform: ["scaleX(0)", "scaleX(1)"] }, { ease: "linear" })), () => bar.remove());
 
-      /* ---------- 3. image parallax (large images only, clipped by their own widget) ---------- */
-      let parallaxCount = 0;
-      root.querySelectorAll<HTMLElement>(".elementor-widget-image").forEach((w) => {
-        if (w.closest(SKIP) || (hero && hero.contains(w))) return;
-        const img = w.querySelector<HTMLImageElement>("img"); if (!img) return;
-        const r = w.getBoundingClientRect(); if (r.width < 380 || r.height < 220 || ++parallaxCount > 8) return;
-        const box = w.querySelector<HTMLElement>(".elementor-widget-container") ?? w;
-        const prev = box.style.overflow; box.style.overflow = "hidden";
-        stops.push(scroll(animate(img, { transform: ["translateY(-3%) scale(1.07)", "translateY(3%) scale(1.07)"] }, { ease: "linear" }), { target: w, offset: ["start end", "end start"] }));
-        restore.push(() => { box.style.overflow = prev; clear(img, ["transform"]); });
-      });
+      /* (image parallax removed: it clipped images by ~7% — owner wants a 1:1 replica) */
 
       /* ---------- 4. hero: scroll-out depth + pointer parallax ---------- */
       if (hero) {

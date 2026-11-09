@@ -86,3 +86,30 @@ body.cx-legacy .swiper-lazy-preloader { display: none !important; }
 
 /* Owner rule: no black "Get Started" button after every paragraph — every second one is hidden (legacy_fixes.py) */
 #cx-legacy-root .cx-cta-skip { display: none !important; }
+
+/* Home "Job Board" picture: the live site hides it on phones/tablets; owner wants it shown in full */
+@media (max-width: 1024px) {
+  /* the whole "Find Your Dream Job / Job Board" block is desktop-only on the live site; show it stacked */
+  #cx-legacy-root .elementor-element-3f8482f.elementor-hidden-mobile, #cx-legacy-root .elementor-element-3f8482f.elementor-hidden-tablet,
+  #cx-legacy-root .elementor-element-bd69c27.elementor-hidden-tablet, #cx-legacy-root .elementor-element-bd69c27.elementor-hidden-mobile,
+  #cx-legacy-root .elementor-element-f58158e.elementor-hidden-tablet, #cx-legacy-root .elementor-element-f58158e.elementor-hidden-mobile { display: flex !important; }
+  #cx-legacy-root .elementor-element-bd69c27, #cx-legacy-root .elementor-element-bd69c27 > .e-con-inner, #cx-legacy-root .elementor-element-f58158e, #cx-legacy-root .elementor-element-e17220b { flex-direction: column !important; width: 100% !important; max-width: 100% !important; transform: none !important; }
+  #cx-legacy-root .elementor-element-e17220b { padding: 0 !important; }
+  #cx-legacy-root .elementor-element-c47e8f7.elementor-hidden-mobile, #cx-legacy-root .elementor-element-c47e8f7.elementor-hidden-tablet { display: block !important; width: 100% !important; max-width: 100% !important; margin-top: 18px; }
+  #cx-legacy-root .elementor-element-c47e8f7 img { width: 100% !important; height: auto !important; max-width: 100% !important; }
+}
+
+/* ───────── Home: "Trusted by Businesses" two-row logo marquee (replaces the swiper strip) ───────── */
+#cx-legacy-root .elementor-element-67027a8 { display: none !important; }
+.cxlm { width: 100%; overflow: hidden; padding: 6px 0 4px; display: grid; gap: 18px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.cxlm-row { overflow: hidden; }
+.cxlm-track { display: flex; align-items: center; gap: 28px; width: max-content; will-change: transform; animation: cxlm-left 170s linear infinite; }
+.cxlm-r .cxlm-track { animation-name: cxlm-right; }
+.cxlm-row:hover .cxlm-track { animation-play-state: paused; }
+.cxlm-cell { flex: 0 0 auto; display: grid; place-items: center; width: 150px; height: 84px; padding: 10px 14px; background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(7, 62, 112, .06); transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s; }
+.cxlm-cell:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(7, 62, 112, .12); }
+.cxlm-cell img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
+@keyframes cxlm-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes cxlm-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+@media (max-width: 767px) { .cxlm { gap: 12px; } .cxlm-track { gap: 16px; animation-duration: 130s; } .cxlm-cell { width: 118px; height: 66px; padding: 8px 10px; border-radius: 12px; } }
+@media (prefers-reduced-motion: reduce) { .cxlm-track { animation: none; } }
