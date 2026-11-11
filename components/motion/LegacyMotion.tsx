@@ -22,7 +22,7 @@ const UNIT = [
   ".elementor-widget-elementskit-heading", ".elementor-widget-elementskit-icon-box", ".elementor-post",
 ].join(",");
 
-type Kind = "words" | "image" | "button" | "rise";
+type Kind = "words" | "button" | "rise";
 const clear = (el: HTMLElement, props: string[]) => props.forEach((p) => el.style.removeProperty(p));
 
 /** Wrap every word of the element's text nodes in an inline-block span (child elements, e.g. coloured spans, are kept). */
@@ -78,7 +78,6 @@ export default function LegacyMotion() {
         if (r.top < vh * 0.98) return;                  // already on screen: leave untouched
         let kind: Kind = "rise";
         if (el.matches(".elementor-widget-heading, .elementor-widget-elementskit-heading") && el.querySelector("h1, h2") && el.textContent && el.textContent.trim().length < 90) kind = "words";
-        else if (el.matches(".elementor-widget-image") && r.width > 160) kind = "image";
         else if (el.matches(".elementor-widget-button")) kind = "button";
         if (kind === "words") {
           const t = el.querySelector<HTMLElement>(".elementor-heading-title, .elementskit-section-title") ?? el;
@@ -91,8 +90,7 @@ export default function LegacyMotion() {
             restore.push(() => { t.innerHTML = html; });
           }
         }
-        if (kind === "image") { el.style.clipPath = "inset(0 0 100% 0)"; el.style.opacity = "0"; }
-        else if (kind === "button") { el.style.opacity = "0"; el.style.transform = "scale(.9) translateY(14px)"; }
+        if (kind === "button") { el.style.opacity = "0"; el.style.transform = "scale(.9) translateY(14px)"; }
         else if (kind === "rise") { el.style.opacity = "0"; el.style.transform = "translateY(38px)"; }
         pending.set(el, kind);
       });
@@ -111,9 +109,6 @@ export default function LegacyMotion() {
           const s = split.get(el)!;
           animate(s.words, { opacity: [0, 1], transform: ["translateY(0.55em)", "translateY(0)"] }, { duration: 0.75, ease: EASE, delay: (i: number) => delay + i * 0.045 })
             .finished.then(() => s.words.forEach((w) => clear(w, ["opacity", "transform"])));
-        } else if (kind === "image") {
-          animate(el, { clipPath: ["inset(0 0 100% 0)", "inset(0 0 0% 0)"], opacity: [0, 1] }, { duration: 1.1, ease: EASE, delay })
-            .finished.then(() => setTimeout(() => clear(el, ["clip-path", "opacity"]), 60));
         } else if (kind === "button") {
           animate(el, { opacity: [0, 1], transform: ["scale(.9) translateY(14px)", "scale(1) translateY(0)"] }, { duration: 0.7, ease: EASE, delay })
             .finished.then(() => clear(el, ["opacity", "transform"]));
@@ -147,25 +142,7 @@ export default function LegacyMotion() {
 
       /* (image parallax removed: it clipped images by ~7% — owner wants a 1:1 replica) */
 
-      /* ---------- 4. hero: scroll-out depth + pointer parallax ---------- */
-      if (hero) {
-        const heroImgs = [...hero.querySelectorAll<HTMLElement>(".elementor-widget-image")];
-        const out = { target: hero, offset: ["start start", "end start"] as never };
-        heroImgs.forEach((el) => stops.push(scroll(animate(el, { transform: ["translateY(0px) scale(1)", "translateY(90px) scale(1.06)"] }, { ease: "linear" }), out)));
-        restore.push(() => heroImgs.forEach((el) => clear(el, ["transform"])));
-        if (fine && heroImgs.length) {
-          let pf = 0, px = 0, py = 0;
-          const apply = () => {
-            pf = 0;
-            const r = hero!.getBoundingClientRect(); if (r.bottom < 0 || r.top > window.innerHeight) return;
-            heroImgs.forEach((el) => { const img = el.querySelector<HTMLElement>("img"); if (img) animate(img, { transform: `translate(${px * -14}px, ${py * -10}px)` }, { duration: 0.8, ease: "easeOut" }); });
-          };
-          const move = (e: PointerEvent) => { px = (e.clientX / window.innerWidth - 0.5) * 2; py = (e.clientY / window.innerHeight - 0.5) * 2; if (!pf) pf = requestAnimationFrame(apply); };
-          window.addEventListener("pointermove", move, { passive: true });
-          stops.push(() => window.removeEventListener("pointermove", move));
-          restore.push(() => heroImgs.forEach((el) => clear(el.querySelector<HTMLElement>("img") ?? el, ["transform"])));
-        }
-      }
+      /* (hero scroll-out / pointer parallax removed: the hero must not move on scroll) */
 
       /* ---------- 5. magnetic buttons ---------- */
       if (fine) {
