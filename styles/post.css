@@ -192,3 +192,12 @@
   .blog-content [class*="note-box"], .blog-content [class*="summary-box"] { padding: 21.6px; border-radius: 14px; }
   .sidebar-widget-box, .widget.toc { padding: 22px; }
 }
+
+/* "Related reading" block added to posts that have no in-body internal links (same style as the template's box) */
+.pst-related { padding-top: 0 !important; padding-bottom: 40px !important; margin-top: -40px; }
+.blog-content .related-links { background: rgba(25,103,176,.04); border: 1px solid rgba(25,103,176,.12); border-radius: 18px; padding: 24px 28px; margin: 54px 0 0; }
+.blog-content .related-links h3 { color: var(--brand-dark) !important; margin: 0 0 14px !important; font-size: 20.7px !important; }
+.blog-content .related-links ul { padding-left: 20px; margin-bottom: 0; }
+.blog-content .related-links li { margin-bottom: 8px; }
+.blog-content .related-links a { text-decoration: none; font-weight: 500; color: var(--brand-dark) !important; }
+.blog-content .related-links a:hover { text-decoration: underline; color: var(--brand-light) !important; }

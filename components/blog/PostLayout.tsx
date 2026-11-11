@@ -13,6 +13,23 @@ import { Reveal, Stagger, Item } from "@/components/motion/Reveal";
    "On this page" list the owner asked to keep. All copy, fonts and colours are the live ones. */
 
 const AVATAR = "/wp-content/uploads/2026/05/anuj-avatar-400.png";
+
+/* Service page that matches each blog category (for the "Related reading" block) */
+const SERVICE: Record<string, { t: string; h: string }> = {
+  "express-entry": { t: "Express Entry services", h: "/permanent-residency/express-entry/" },
+  "family-sponsorship": { t: "Family Sponsorship services", h: "/permanent-residency/family-sponsorship/" },
+  lmia: { t: "LMIA services for employers", h: "/lmia/" },
+  "work-permit": { t: "Work Permit services", h: "/work-permit/" },
+  "super-visa-visitor-visa": { t: "Visit Canada: visitor and super visa help", h: "/visit/" },
+  "provincial-nominee-program": { t: "Provincial Nominee Program services", h: "/permanent-residency/provincial-nominee-program/" },
+  "study-permit": { t: "Study in Canada services", h: "/study/" },
+  "citizenship-settlement": { t: "Canadian Citizenship services", h: "/citizenship/" },
+  "refusals-reapplications": { t: "Talk to a licensed RCIC about a refusal", h: "/get-started/" },
+  "immigration-ai": { t: "Get a consultation with a licensed RCIC", h: "/get-started/" },
+  canada: { t: "Permanent Residency pathways", h: "/permanent-residency/" },
+};
+/* in-body links to other articles/pages — CTA targets (get-started, contact, team) do not count */
+const internalLinkCount = (html: string) => (html.match(/href="\/(?!wp-|get-started|contact-us|team)[^"]*"/g) || []).length;
 const MONTHS = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
 const monthYear = (iso: string) => { const d = new Date(iso); return `${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`; };
 
@@ -33,6 +50,8 @@ export default function PostLayout({ post }: { post: Post }) {
   const encTitle = encodeURIComponent(post.h1 || post.title);
   const { html: bodyHtml, toc } = withHeadingIds(post.body);
   const title = post.h1 || post.title;
+  const service = SERVICE[post.category];
+  const needsRelated = internalLinkCount(post.body) < 3 && !/related-links/.test(post.body);
 
   return (
     <div className="pst">
@@ -66,6 +85,18 @@ export default function PostLayout({ post }: { post: Post }) {
           )}
 
           <div className="blog-content" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+          {needsRelated && (
+            <div className="blog-content pst-related">
+              <div className="related-links">
+                <h3>Related reading</h3>
+                <ul>
+                  {related.map((r) => <li key={r.slug}><Link href={`/${r.slug}/`}>{r.title}</Link></li>)}
+                  {service && <li><Link href={service.h}>{service.t}</Link></li>}
+                  <li><Link href={CATEGORIES[post.category]?.path ?? "/immigration-blogs/"}>More {post.categoryLabel} articles</Link></li>
+                </ul>
+              </div>
+            </div>
+          )}
           <FaqEnhancer />
         </main>
 
