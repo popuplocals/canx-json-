@@ -113,3 +113,55 @@ body.cx-legacy .swiper-lazy-preloader { display: none !important; }
 @keyframes cxlm-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 @media (max-width: 767px) { .cxlm { gap: 12px; } .cxlm-track { gap: 16px; animation-duration: 130s; } .cxlm-cell { width: 118px; height: 66px; padding: 8px 10px; border-radius: 12px; } }
 @media (prefers-reduced-motion: reduce) { .cxlm-track { animation: none; } }
+
+/* Home "Job Board" block on phones/tablets: the four buttons stack full-width and centred */
+@media (max-width: 1024px) {
+  #cx-legacy-root .elementor-element-3f8482f .elementor-widget-button { width: 100% !important; max-width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; text-align: center !important; }
+  #cx-legacy-root .elementor-element-3f8482f .elementor-widget-button .elementor-widget-container { padding-left: 0 !important; padding-right: 0 !important; }
+  #cx-legacy-root .elementor-element-3f8482f .elementor-button-wrapper { display: block !important; text-align: center !important; }
+  #cx-legacy-root .elementor-element-3f8482f .elementor-button { display: flex !important; width: 100% !important; justify-content: center !important; box-sizing: border-box; }
+  #cx-legacy-root .elementor-element-3f8482f .e-con-inner, #cx-legacy-root .elementor-element-3f8482f .e-con { align-items: stretch !important; justify-content: flex-start !important; }
+  #cx-legacy-root .elementor-element-3f8482f .elementor-widget-button + .elementor-widget-button { margin-top: 12px !important; }
+}
+@media (max-width: 1024px) {
+  /* tablet: the Share Your Resume / Career Guide pair lives in a tablet-hidden container; fixed button widths must not overflow */
+  #cx-legacy-root .elementor-element-56d5767.elementor-hidden-tablet { display: flex !important; }
+  #cx-legacy-root .elementor-element-3f8482f .elementor-widget-button { --container-widget-width: 100% !important; }
+  #cx-legacy-root .elementor-element-3f8482f .elementor-button-wrapper, #cx-legacy-root .elementor-element-3f8482f .elementor-button-link { width: 100% !important; max-width: 100% !important; min-width: 0 !important; }
+}
+@media (max-width: 1024px) {
+  /* Job Board block: nested containers take the full width (Elementor gives one a fixed 300px on tablet) and buttons size border-box */
+  #cx-legacy-root .elementor-element-3f8482f .e-con.e-child { --width: 100% !important; width: 100% !important; max-width: 100% !important; }
+  #cx-legacy-root .elementor-element-3f8482f .elementor-button { box-sizing: border-box !important; }
+}
+
+/* Job Board block (≤1024): the live CSS nudges "Find Your Dream Job" with a -50px right margin on
+   its widget container (a desktop-only alignment trick). Zero it so all four buttons share one width. */
+@media (max-width: 1024px) {
+  #cx-legacy-root .elementor-element-3f8482f .elementor-widget-button > .elementor-widget-container {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Job Board block on tablets (768–1024): the live page hides this block below desktop, so the
+   tablet layout is the same stacked one as the phone: heading + text + photo, then the four buttons.
+   The desktop ring graphic stays desktop-only and the text column is no longer absolutely overlaid. */
+@media (max-width: 1024px) {
+  #cx-legacy-root .elementor-element-3f8482f .elementor-element-ed3cf29 { display: none !important; }
+  #cx-legacy-root .elementor-element-3f8482f .elementor-element-e17220b {
+    position: static !important; left: auto !important; top: auto !important; transform: none !important;
+  }
+  #cx-legacy-root .elementor-element-3f8482f .elementor-element-54e3220 { order: 0 !important; }
+  #cx-legacy-root .elementor-element-3f8482f .elementor-element-56d5767 { order: 1 !important; }
+  #cx-legacy-root .elementor-element-3f8482f .elementor-element-f58158e { order: 2 !important; }
+}
+@media (max-width: 1024px) {
+  /* Job Board block: the button groups keep no desktop minimum height, and the two groups sit 12px apart like the buttons inside them */
+  #cx-legacy-root .elementor-element-3f8482f .elementor-element-56d5767,
+  #cx-legacy-root .elementor-element-3f8482f .elementor-element-f58158e { min-height: 0 !important; padding: 0 !important; }
+  #cx-legacy-root .elementor-element-3f8482f .elementor-element-f58158e { margin-top: 12px !important; }
+  /* the small "Find the Job You Deserve" pill centres with the heading below it */
+  #cx-legacy-root .elementor-element-3f8482f .elementor-element-0382941 { align-self: center !important; margin-left: auto !important; margin-right: auto !important; }
+}
